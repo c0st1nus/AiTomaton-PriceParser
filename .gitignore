@@ -4,7 +4,7 @@
 *.user
 *.sln.docstates
 venv
-
+test.py
 # Python
 __pycache__/
 *.pyc
