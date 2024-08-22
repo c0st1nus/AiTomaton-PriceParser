@@ -1,0 +1,20 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.sln.docstates
+venv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyi
+*.pyw
+*.pyz
+*.pywz
+*.pyzw
+*.egg-info/
+dist/
+build/
