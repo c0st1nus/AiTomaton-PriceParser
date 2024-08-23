@@ -1,11 +1,9 @@
-import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.firefox.options import Options
-from webdriver_manager.firefox import GeckoDriverManager
+import re
 
-def openAI(url="https://openai.com/api/pricing/"):
+def microsoft(url="https://azure.microsoft.com/en-us/pricing/details/phi-3/?cdn=disable"):
     service = Service("C:\\geckodriver\\geckodriver.exe")
     options = webdriver.FirefoxOptions()
     options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
@@ -13,23 +11,24 @@ def openAI(url="https://openai.com/api/pricing/"):
     driver = webdriver.Firefox(service=service, options=options)
     
     driver.get(url)
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(1)
 
     html_content = driver.page_source
     driver.quit()
 
     soup = BeautifulSoup(html_content, 'html.parser')
-    grids = soup.find_all('div', class_='grid col-span-full grid-cols-autofit')
+    tables = soup.find_all('table', class_='data-table__table data-table__table--pricing')
 
     data = {}
     price_pattern = re.compile(r'\$([\d.]+)')
 
-    for grid in grids:
-        columns = grid.find_all('div', class_='m:border-l-[1px] border-gray-20 text-small flex flex-col gap-y-6xs m:flex-row m:py-4xs m:px-3xs px-5xs py-2xs')
-        if len(columns) == 3:
-            model = columns[0].find('span').text.strip() if columns[0].find('span') else ''
-            input_price_match = price_pattern.search(columns[1].text.strip())
-            output_price_match = price_pattern.search(columns[2].text.strip())
+    for table in tables:
+        for row in table.find('tbody').find_all('tr'):
+            columns = row.find_all('td')
+            model = columns[0].text.strip()
+            
+            input_price_match = price_pattern.search(columns[2].text.strip())
+            output_price_match = price_pattern.search(columns[3].text.strip())
             
             if input_price_match and output_price_match:
                 input_price = input_price_match.group(1)
@@ -42,5 +41,5 @@ def openAI(url="https://openai.com/api/pricing/"):
     return data
 
 if __name__ == "__main__":
-    result = openAI()
+    result = microsoft()
     print(result)
