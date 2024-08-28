@@ -1,45 +1,37 @@
-import requests
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
 from bs4 import BeautifulSoup
 import re
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0'
-}
+def groq(url="https://groq.com/enterprise-access/"):
+    service = Service("C:\\geckodriver\\geckodriver.exe")
+    options = webdriver.FirefoxOptions()
+    options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(service=service, options=options)
+    
+    driver.get(url)
+    driver.implicitly_wait(1)
+    
+    html_content = driver.page_source
+    driver.quit()
 
-def groq(url="https://wow.groq.com/"):
-    response = requests.get(url, headers=headers)
-    html_content = response.text
-
+    
     soup = BeautifulSoup(html_content, 'html.parser')
-
-    table = soup.find('table', class_='pmatrix')
-
-    if table is None:
-        return {}
-
+    table = soup.find('table', {'id': 'tablepress-1'})
     data = {}
-
-    price_pattern = re.compile(r'\$([\d.]+)')
 
     for row in table.find('tbody').find_all('tr'):
         columns = row.find_all('td')
         model = columns[0].text.strip()
-        speed = columns[1].text.strip()
-        
-        price_text = columns[2].text.strip()
-        prices = price_pattern.findall(price_text)
-        
-        if len(prices) == 2:
-            input_price, output_price = prices
-        else:
-            input_price = prices[0]
-            output_price = None
+        input_price = re.search(r'\$([0-9.]+)', columns[2].text.strip()).group(1)
+        output_price = re.search(r'\$([0-9.]+)', columns[3].text.strip()).group(1)
         
         data[model] = {
             "input_price": input_price,
             "output_price": output_price
         }
-
+    
     return data
 
 if __name__ == "__main__":

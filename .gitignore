@@ -5,6 +5,7 @@
 *.sln.docstates
 venv
 test.py
+./log.txt
 # Python
 __pycache__/
 *.pyc
