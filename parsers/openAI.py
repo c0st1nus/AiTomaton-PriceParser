@@ -19,25 +19,27 @@ def openAI(url="https://openai.com/api/pricing/"):
     driver.quit()
 
     soup = BeautifulSoup(html_content, 'html.parser')
-    grids = soup.find_all('div', class_='grid col-span-full grid-cols-autofit')
-
+    grid = soup.find('div', class_='w-full grid m:inline-block transition-all duration-300 grid-rows-[0fr]')
+    
     data = {}
     price_pattern = re.compile(r'\$([\d.]+)')
 
-    for grid in grids:
-        columns = grid.find_all('div', class_='m:border-l-[1px] border-gray-20 text-small flex flex-col gap-y-6xs m:flex-row m:py-4xs m:px-3xs px-5xs py-2xs')
-        if len(columns) == 3:
-            model = columns[0].find('span').text.strip() if columns[0].find('span') else ''
-            input_price_match = price_pattern.search(columns[1].text.strip())
-            output_price_match = price_pattern.search(columns[2].text.strip())
-            
-            if input_price_match and output_price_match:
-                input_price = input_price_match.group(1)
-                output_price = output_price_match.group(1)
-                data[model] = {
-                    "input_price": input_price,
-                    "output_price": output_price
-                }
+    if grid:
+        rows = grid.find_all('div', class_='grid col-span-full grid-cols-autofit')
+        for row in rows:
+            columns = row.find_all('div', class_='m:border-l-[1px] border-gray-20 text-small flex flex-col gap-y-6xs m:flex-row m:py-4xs m:px-3xs px-5xs py-2xs')
+            if len(columns) == 3:
+                model = columns[0].find('span').text.strip() if columns[0].find('span') else ''
+                input_price_match = price_pattern.search(columns[1].text.strip())
+                output_price_match = price_pattern.search(columns[2].text.strip())
+                
+                if input_price_match and output_price_match:
+                    input_price = input_price_match.group(1)
+                    output_price = output_price_match.group(1)
+                    data[model] = {
+                        "input_price": input_price,
+                        "output_price": output_price
+                    }
 
     return data
 
