@@ -1,32 +1,20 @@
 import asyncio
 from logic import get_data
 from datetime import datetime
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, abort
 from threading import Thread
 import os
+import handler
 
 app = Flask(__name__)
 
 @app.route('/date/<string:date>')
-def show_date(date):
-    directory = os.path.join('prices', date)
-    
-    if not os.path.exists(directory):
-        abort(404, description="Directory not found")
-    
-    files = os.listdir(directory)
-    if not files:
-        abort(404, description="No files found in directory")
-    
-    files = [os.path.join(directory, f) for f in files]
-    latest_file = max(files, key=os.path.getctime)
-    print(latest_file)
-    
-    return send_from_directory(directory, os.path.basename(latest_file))
+def show_date(date):    
+    return handler.select_data(date)
 
 @app.route('/avg')
 def show_avg():
-    return send_from_directory('', 'average_prices.json')
+    return handler.select_avg()
 
 async def call_function():
     while True:
