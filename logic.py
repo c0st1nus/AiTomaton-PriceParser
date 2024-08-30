@@ -1,10 +1,11 @@
 import json
 from datetime import datetime
 from parsers import *
+import os
 
 def get_data():
-    service = ''
-    try:
+        service = ''
+    # try:
         result = {}
         print("Start of parsing")
         print('=' * 20)
@@ -92,14 +93,14 @@ def get_data():
         with open(f"prices/{current_date}.json", 'w', encoding='utf-8') as f:
             json.dump(consolidated_data, f, indent=4, ensure_ascii=False)
         calculate_average_prices(consolidated_data)
-    except Exception as e:
-        current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
-        log_message = f"{current_time} [Error] An error occurred while parsing {service}: {str(e)}\n"
-        print('=' * 20)
-        print("An error occurred while parsing, check the log.txt")
-        print('=' * 20)
-        with open("log.txt", "a") as log_file:
-            log_file.write(log_message)
+    # except Exception as e:
+    #     current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
+    #     log_message = f"{current_time} [Error] An error occurred while parsing {service}: {str(e)}\n"
+    #     print('=' * 20)
+    #     print("An error occurred while parsing, check the log.txt")
+    #     print('=' * 20)
+    #     with open("log.txt", "a") as log_file:
+    #         log_file.write(log_message)
 
 def log_success(service):
     current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
@@ -146,18 +147,12 @@ def calculate_average_prices(data):
 
 
 def update_average_prices(current_date, average_prices):
-    # Открываем файл для чтения, если он существует
     try:
         with open("average_prices.json", 'r', encoding='utf-8') as f:
             data = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         data = {}
 
-    # Добавляем новые данные с текущей датой
     data[current_date] = average_prices
-
-    # Открываем файл для записи и сохраняем обновленные данные
     with open("average_prices.json", 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
-
-get_data()
