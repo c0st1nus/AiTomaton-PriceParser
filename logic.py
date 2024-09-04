@@ -70,7 +70,7 @@ def similarity(s1, s2):
     s1, s2 = ''.join(filter(str.isalnum, s1.lower())), ''.join(filter(str.isalnum, s2.lower()))
     intersection = len(set(s1) & set(s2))
     similarity_ratio = intersection / max(len(s1), len(s2))
-    return similarity_ratio >= 0.45
+    return similarity_ratio >= 1
 
 def calculate_average_prices(data):
     total_input_price = 0
