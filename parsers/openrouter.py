@@ -1,15 +1,20 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
+import re
+import os
 
 def openrouter(url="https://openrouter.ai/docs/models"):
-    service = Service("C:\\geckodriver\\geckodriver.exe")
+    geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
+    firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
+
+    # Использование путей в коде
+    service = Service(geckodriver_path)
     options = webdriver.FirefoxOptions()
-    options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    options.binary_location = firefox_path
     options.add_argument('--headless')
     driver = webdriver.Firefox(service=service, options=options)
     driver.get(url)

@@ -4,9 +4,9 @@ import pymysql
 from datetime import datetime
 
 connection = pymysql.connect(
-    host='localhost',
-    user='root',
-    password='root',
+    host='145.249.249.29',
+    user='remoteuser',
+    password='new_strong_password',
     database='parser',
     port=3306,
     cursorclass=pymysql.cursors.DictCursor
@@ -57,6 +57,14 @@ def create_tables_query(data):
     return queries
 
 def save_data(data, average_prices):
+    connection = pymysql.connect(
+        host='145.249.249.29',
+        user='remoteuser',
+        password='new_strong_password',
+        database='parser',
+        port=3306,
+        cursorclass=pymysql.cursors.DictCursor
+    )
     cursor = connection.cursor()
     table_queries = create_tables_query(data)
     for query in table_queries:
@@ -71,9 +79,9 @@ def save_data(data, average_prices):
 def select_data(data):
     try:
         connection = pymysql.connect(
-            host='localhost',
-            user='root',
-            password='root',
+            host='145.249.249.29',
+            user='remoteuser',
+            password='new_strong_password',
             database='parser',
             port=3306,
             cursorclass=pymysql.cursors.DictCursor
@@ -112,9 +120,9 @@ def select_data(data):
 def select_avg():
     try:
         connection = pymysql.connect(
-            host='localhost',
-            user='root',
-            password='root',
+            host='145.249.249.29',
+            user='remoteuser',
+            password='new_strong_password',
             database='parser',
             port=3306,
             cursorclass=pymysql.cursors.DictCursor

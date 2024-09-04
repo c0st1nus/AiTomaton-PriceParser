@@ -2,23 +2,26 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from bs4 import BeautifulSoup
 import re
+import os
 
-def groq(url="https://groq.com/enterprise-access/"):
-    service = Service("C:\\geckodriver\\geckodriver.exe")
+def groq(url="https://groq.com/pricing/"):
+    geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
+    firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
+
+    service = Service(geckodriver_path)
     options = webdriver.FirefoxOptions()
-    options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    options.binary_location = firefox_path
     options.add_argument('--headless')
     driver = webdriver.Firefox(service=service, options=options)
     
     driver.get(url)
     driver.implicitly_wait(1)
-    
+
     html_content = driver.page_source
     driver.quit()
-
     
     soup = BeautifulSoup(html_content, 'html.parser')
-    table = soup.find('table', {'id': 'tablepress-1'})
+    table = soup.find('table', {'id': 'tablepress-5'})
     data = {}
 
     for row in table.find('tbody').find_all('tr'):

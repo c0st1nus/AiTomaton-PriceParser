@@ -57,6 +57,7 @@ def get_data():
                     break
             if not found:
                 consolidated_data[model_name] = {provider: prices}
+    print(consolidated_data)
     handler.save_data(consolidated_data, calculate_average_prices(consolidated_data))
 
 def log_success(service):

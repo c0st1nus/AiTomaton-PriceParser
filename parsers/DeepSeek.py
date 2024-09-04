@@ -2,11 +2,16 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 import re
+import os
 
 def deepseek(url="https://platform.deepseek.com/api-docs/pricing/"):
-    service = Service("C:\\geckodriver\\geckodriver.exe")
+    geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
+    firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
+
+    # Использование путей в коде
+    service = Service(geckodriver_path)
     options = webdriver.FirefoxOptions()
-    options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    options.binary_location = firefox_path
     options.add_argument('--headless')
     driver = webdriver.Firefox(service=service, options=options)
     

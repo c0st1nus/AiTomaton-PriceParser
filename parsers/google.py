@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 from webdriver_manager.firefox import GeckoDriverManager
+import os
 
 def transform_data(data):
     new_data = {}
@@ -17,9 +18,13 @@ def transform_data(data):
     return new_data
 
 def google(url="https://ai.google.dev/pricing?hl=ru"):
-    service = Service("C:\\geckodriver\\geckodriver.exe")
+    geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
+    firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
+
+    # Использование путей в коде
+    service = Service(geckodriver_path)
     options = webdriver.FirefoxOptions()
-    options.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    options.binary_location = firefox_path
     options.add_argument('--headless')
     driver = webdriver.Firefox(service=service, options=options)
     driver.get(url)
