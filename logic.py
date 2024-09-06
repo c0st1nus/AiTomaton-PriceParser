@@ -38,6 +38,9 @@ def get_data():
     service = 'cloudflare'
     result['cloudflare'] = cloudflare()
     log_success(service)
+    service = 'novita'
+    result['novita'] = cloudflare()
+    log_success(service)
     print('Parsing Success')
     print('=' * 20)
     current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
@@ -49,6 +52,15 @@ def get_data():
         for model_name, prices in models.items():
             if not model_name or 'input_price' not in prices or 'output_price' not in prices:
                 continue
+            try:
+                input_price = round(float(prices['input_price'].replace(',', '.')), 2)
+                output_price = round(float(prices['output_price'].replace(',', '.')), 2)
+            except ValueError:
+                continue
+            if input_price <= 0 or input_price >= 40 or output_price <= 0 or output_price >= 40:
+                continue
+            prices['input_price'] = input_price
+            prices['output_price'] = output_price
             found = False
             for existing_name in consolidated_data.keys():
                 if similarity(existing_name, model_name):
@@ -57,7 +69,6 @@ def get_data():
                     break
             if not found:
                 consolidated_data[model_name] = {provider: prices}
-    print(consolidated_data)
     handler.save_data(consolidated_data, calculate_average_prices(consolidated_data))
 
 def log_success(service):
@@ -82,13 +93,13 @@ def calculate_average_prices(data):
         for provider, prices in providers.items():
             if 'input_price' in prices:
                 try:
-                    total_input_price += float(prices['input_price'].replace(',', '.'))
+                    total_input_price += float(str(prices['input_price']).replace(',', '.'))
                     input_count += 1
                 except ValueError:
                     pass
             if 'output_price' in prices:
                 try:
-                    total_output_price += float(prices['output_price'].replace(',', '.'))
+                    total_output_price += float(str(prices['output_price']).replace(',', '.'))
                     output_count += 1
                 except ValueError:
                     pass

@@ -10,7 +10,6 @@ def openAI(url="https://openai.com/api/pricing/"):
     geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
     firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
 
-    # Использование путей в коде
     service = Service(geckodriver_path)
     options = webdriver.FirefoxOptions()
     options.binary_location = firefox_path

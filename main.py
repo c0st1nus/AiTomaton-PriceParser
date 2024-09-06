@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import asyncio
 import logic
 from datetime import datetime
@@ -5,12 +6,18 @@ from flask import Flask, send_from_directory, abort
 from threading import Thread
 import os
 import handler
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/date/<string:date>')
 def show_date(date):    
     return handler.select_data(date)
+
+@app.route('/log')
+def show_log():
+    return send_from_directory(os.path.dirname(__file__), 'log.txt')
 
 @app.route('/avg')
 def show_avg():
@@ -21,7 +28,7 @@ async def call_function():
         logic.get_data()
         now = datetime.now()
         print('Before:', now)
-        await asyncio.sleep(60)
+        await asyncio.sleep(14400)
         now = datetime.now()
         print('After:', now)
 

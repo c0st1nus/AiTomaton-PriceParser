@@ -17,13 +17,14 @@ def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
     driver = webdriver.Firefox(service=service, options=options)
     driver.get(url)
     
-    # Ожидание появления элемента с классом PricingCard_pricingCard__I0GPp
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CLASS_NAME, 'PricingCard_pricingCard__I0GPp'))
     )
     
     html_content = driver.page_source
     driver.quit()
+    with open('anthropic.html', 'w', encoding='utf-8') as file:
+        file.write(html_content)
     soup = BeautifulSoup(html_content, 'html.parser')
     cards = soup.find_all('article', class_='PricingCard_pricingCard__I0GPp')
 
@@ -31,9 +32,12 @@ def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
     price_pattern = re.compile(r'\$([\d.]+)')
 
     for card in cards:
-        model = card.find('h3', class_='PricingCard_title__QrC94').text.strip()
+        title_element = card.find('h3')
+        if title_element is None:
+            continue
+        model = title_element.text.strip()
         if model in ['Free', 'Pro', 'Team']:
-            continue  # Пропускаем ненужные модели
+            continue
         price_sections = card.find_all('div', class_='PricingCard_cost__m6Npy')
         price_data = {}
         for section in price_sections:
@@ -42,12 +46,11 @@ def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
                 price_text = section.find('div', class_='PricingCard_price___wnbq').text.strip()
                 match = price_pattern.search(price_text)
                 if match:
-                    price_data[caption] = match.group(1)  # Сохраняем цену как строку
-        if price_data:  # Сохраняем только если есть нужные данные
+                    price_data[caption] = match.group(1)
+        if price_data:
             data[model] = price_data
 
     return data
 
-# Пример вызова функции
 if __name__ == '__main__':
     print(anthropic())
