@@ -57,7 +57,7 @@ def get_data():
                 output_price = round(float(prices['output_price'].replace(',', '.')), 2)
             except ValueError:
                 continue
-            if input_price <= 0 or input_price >= 40 or output_price <= 0 or output_price >= 40:
+            if input_price < 0 or input_price >= 40 or output_price <= 0 or output_price >= 40:
                 continue
             prices['input_price'] = input_price
             prices['output_price'] = output_price

@@ -2,6 +2,20 @@ import re
 import pymysql
 from datetime import datetime
 
+operators = [
+    'openrouter',
+    'groq',
+    'mistral',
+    'cohere',
+    'openAI',
+    'anthropic',
+    'google',
+    'microsoft',
+    'deepseek',
+    'cloudflare',
+    'novita'
+]
+
 connection = pymysql.connect(
     host='145.249.249.29',
     user='remoteuser',
@@ -47,7 +61,7 @@ def create_tables_query(data):
     queries = []
     for key, value in data.items():
         query = f"CREATE TABLE IF NOT EXISTS {clean_column_name(key)} (date DATETIME, "
-        for operator in value.keys():
+        for operator in operators:
             query += f"{clean_column_name(operator)} VARCHAR(255), "
         query = query.rstrip(", ")
         query += ")"
