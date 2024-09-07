@@ -51,13 +51,13 @@ def get_data():
     for provider, models in data.items():
         for model_name, prices in models.items():
             if not model_name or 'input_price' not in prices or 'output_price' not in prices:
+                print(model_name)
                 continue
             try:
                 input_price = round(float(prices['input_price'].replace(',', '.')), 2)
                 output_price = round(float(prices['output_price'].replace(',', '.')), 2)
             except ValueError:
-                continue
-            if input_price < 0 or input_price >= 40 or output_price <= 0 or output_price >= 40:
+                print(model_name)
                 continue
             prices['input_price'] = input_price
             prices['output_price'] = output_price
@@ -69,6 +69,8 @@ def get_data():
                     break
             if not found:
                 consolidated_data[model_name] = {provider: prices}
+    with open("test.json", 'w', encoding="UTF-8") as f:
+        json.dump(result, f)
     handler.save_data(consolidated_data, calculate_average_prices(consolidated_data))
 
 def log_success(service):

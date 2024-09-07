@@ -10,12 +10,15 @@ import os
 def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
     geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
     firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
+
     service = Service(geckodriver_path)
     options = webdriver.FirefoxOptions()
     options.binary_location = firefox_path
     options.add_argument('--headless')
     driver = webdriver.Firefox(service=service, options=options)
+    
     driver.get(url)
+    driver.implicitly_wait(1)
     
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CLASS_NAME, 'PricingCard_pricingCard__I0GPp'))
@@ -39,15 +42,20 @@ def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
         if model in ['Free', 'Pro', 'Team']:
             continue
         price_sections = card.find_all('div', class_='PricingCard_cost__m6Npy')
-        price_data = {}
+        price_data = {"input_price": None, "output_price": None}  # Изменено
         for section in price_sections:
             caption = section.find('div', class_='text-caption').text.strip()
-            if caption in ['Input', 'Output']:
+            if caption == 'Input':
                 price_text = section.find('div', class_='PricingCard_price___wnbq').text.strip()
                 match = price_pattern.search(price_text)
                 if match:
-                    price_data[caption] = match.group(1)
-        if price_data:
+                    price_data["input_price"] = match.group(1)  # Изменено
+            elif caption == 'Output':  # Изменено
+                price_text = section.find('div', class_='PricingCard_price___wnbq').text.strip()
+                match = price_pattern.search(price_text)
+                if match:
+                    price_data["output_price"] = match.group(1)  # Изменено
+        if price_data["input_price"] or price_data["output_price"]:  # Изменено
             data[model] = price_data
 
     return data

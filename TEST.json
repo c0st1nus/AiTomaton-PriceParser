@@ -1,108 +1,57 @@
-AI21__Jamba_1_5_Large
-AI21__Jamba_1_5_Mini
-AI21__Jamba_Instruct
-Airoboros_70B
-Anthropic__Claude_3_5_Sonnet
-Anthropic__Claude_3_5_Sonnet__self_moderated_
-Anthropic__Claude_3_Haiku
-Anthropic__Claude_3_Haiku__self_moderated_
-Anthropic__Claude_3_Sonnet
-Anthropic__Claude_3_Sonnet__self_moderated_
-Anthropic__Claude_Instant_v1
-Anthropic__Claude_Instant_v1_0
-Anthropic__Claude_Instant_v1_1
-Anthropic__Claude_Instant_v1__self_moderated_
-Anthropic__Claude_v1
-Anthropic__Claude_v1_2
-Anthropic__Claude_v2
-Anthropic__Claude_v2_0
-Anthropic__Claude_v2_0__self_moderated_
-Anthropic__Claude_v2_1
-Anthropic__Claude_v2_1__self_moderated_
-Anthropic__Claude_v2__self_moderated_
-Chronos_Hermes_13B_v2
-Codestral
-Cohere__Command
-Cohere__Command_R
-Cohere__Command_R_
-Cohere__Command_R__03_2024_
-Cohere__Command_R__08_2024_
-Cohere__Command_R___04_2024_
-Cohere__Command_R___08_2024_
-Command_R_
-Databricks__DBRX_132B_Instruct
-DeepSeek_Coder_V2
-DeepSeek_V2_Chat
-Dolphin_2_6_Mixtral_8x7B__
-Dolphin_2_9_2_Mixtral_8x22B__
-Dolphin_Llama_3_70B__
-Fimbulvetr_11B_v2
-Gemini_1_5_Flash
-Gemma_2_9B_8k
-Gemma_7B_8k_Instruct
-Goliath_120B
-Google__Gemini_Flash_1_5
-Google__Gemini_Pro_1_0
-Google__Gemini_Pro_1_5
-Google__Gemini_Pro_Vision_1_0
-Google__Gemma_2_27B
-Google__Gemma_2_9B
-Google__PaLM_2_Chat
-Google__PaLM_2_Chat_32k
-Google__PaLM_2_Code_Chat
-Google__PaLM_2_Code_Chat_32k
-Llama_3_1_70B_Versatile_128k
-Llama_3_1_8B_Instant_128k
-Llama_3_1_Euryale_70B_v2_2
-Llama_3_70B_8k
-Llama_3_8B_8k
-Llama_3_8B_Lunaris
-Llama_3_Euryale_70B_v2_1
-Llama_3_Groq_70B_Tool_Use_Preview_8K
-Llama_3_Groq_8B_Tool_Use_Preview_8K
-Llama_3_Lumimaid_70B
-Llama_3_Lumimaid_8B
-Llama_3_Lumimaid_8B__extended_
-Llama_3_Stheno_8B_v3_3_32K
-Llama_Guard_3_8B_8K
-Magnum_72B
-Mancer__Weaver__alpha_
-Meta__LlamaGuard_2_8B
-Meta__Llama_3_1_405B_Instruct
-Meta__Llama_3_1_405B__base_
-Meta__Llama_3_1_70B_Instruct
-Meta__Llama_3_1_8B_Instruct
-Meta__Llama_3_70B_Instruct
-Meta__Llama_3_70B_Instruct__nitro_
-Meta__Llama_3_8B_Instruct
-Meta__Llama_3_8B_Instruct__extended_
-Meta__Llama_3_8B_Instruct__nitro_
-Meta__Llama_v2_13B_Chat
-Midnight_Rose_70B
-Mistral_7B
-Mistral_Large
-Mistral_Large_2
-Mistral_Medium
-Mistral_Nemo
-Mistral_Nemo_12B_Celeste
-Mistral_Nemo_12B_Starcannon
-Mistral_Small
-Mistral_Tiny
-Mistral__Codestral_Mamba
-Mistral__Mistral_7B_Instruct
-Mistral__Mistral_7B_Instruct__nitro_
-Mistral__Mistral_7B_Instruct_v0_1
-Mistral__Mistral_7B_Instruct_v0_2
-Mistral__Mistral_7B_Instruct_v0_3
+'AI21__Jamba_1_5_Large'
+'AI21__Jamba_1_5_Mini'
+'AI21__Jamba_Instruct'
+'Airoboros_70B'
+'Anthropic__Claude_3_5_Sonnet'
+'Anthropic__Claude_3_5_Sonnet__self_moderated_'
+'Anthropic__Claude_3_Haiku'
+'Anthropic__Claude_3_Haiku__self_moderated_'
+'Anthropic__Claude_3_Opus'
+'Anthropic__Claude_3_Opus__self_moderated_'
+'Anthropic__Claude_3_Sonnet'
+'Anthropic__Claude_3_Sonnet__self_moderated_'
+'Anthropic__Claude_Instant_v1'
+'Anthropic__Claude_Instant_v1_0'
+'Anthropic__Claude_Instant_v1_1'
+'Anthropic__Claude_Instant_v1__self_moderated_'
+'Anthropic__Claude_v1'
+'Anthropic__Claude_v1_2'
+'Anthropic__Claude_v2'
+'Anthropic__Claude_v2_0'
+'Anthropic__Claude_v2_0__self_moderated_'
+'Anthropic__Claude_v2_1'
+'Anthropic__Claude_v2_1__self_moderated_'
+'Anthropic__Claude_v2__self_moderated_'
+'Auto__best_for_prompt_'
+'Chronos_Hermes_13B_v2'
+'Claude_2_0'
+'Claude_2_1'
+'Claude_3_5_Sonnet'
+'Claude_3_Haiku'
+'Claude_3_Opus'
+'Claude_3_Sonnet'
+'Claude_Instant'
+'Codestral'
+'Cohere__Command'
+'Cohere__Command_R'
+'Cohere__Command_R_'
+'Cohere__Command_R__03_2024_'
+'Cohere__Command_R__08_2024_'
+'Cohere__Command_R___04_2024_'
+'Cohere__Command_R___08_2024_'
+'Command_R_'
+'Databricks__DBRX_132B_Instruct'
+
 
 {
-    "SKIP": ["OpenAI__GPT_4_Vision"],
+    "SKIP": ["Google__Gemini_Flash_1_5_Experimental", "Google__Gemini_Flash_8B_1_5_Experimental", "Google__Gemini_Pro_1_5_Experimental","Google__Gemma_2_9B__free_", "Hugging_Face__Zephyr_7B__free_", "Meta__Llama_3_8B_Instruct__free_", "Meta__Llama_3_1_8B_Instruct__free_", "Perplexity__Llama3_Sonar_70B_Online", "Perplexity__Llama3_Sonar_8B_Online", "Perplexity__Llama_3_1_Sonar_8B_Online", "Perplexity__Llama_3_1_Sonar_70B_Online", ],
     "GPT-4o": ["gpt_4o", "OpenAI__GPT_4o", "OpenAI__ChatGPT_4o"],
     "GPT-4o (2024-05-13)": ["gpt_4o_2024_05_13", "OpenAI__GPT_4o__2024_05_13_"],
     "GPT-4o (2024-08-06)": ["gpt_4o_2024_08_06", "OpenAI__GPT_4o__2024_08_06_"],
     "GPT-4o (extended)": ["OpenAI__GPT_4o__extended_"],
     "GPT-4o mini": ["OpenAI__GPT_4o_mini"],
     "GPT-4o mini (2024-07-18)": ["OpenAI__GPT_4o_mini__2024_07_18_"],
+    "GPT-4 Vision": ["OpenAI__GPT_4_Vision"],
     "GPT-4 (turbo)": ["OpenAI__GPT_4_Turbo"],
     "GPT-4 (turbo) older v1106": ["OpenAI__GPT_4_Turbo__older_v1106_"],
     "GPT-4 (turbo) preview": ["OpenAI__GPT_4_Turbo_Preview"],
@@ -112,8 +61,25 @@ Mistral__Mistral_7B_Instruct_v0_3
     "GPT-3.5 (turbo) instruct": ["OpenAI__GPT_3_5_Turbo_Instruct"],
     "GPT-3.5 (turbo) 16k": ["OpenAI__GPT_3_5_Turbo_16k"],
     "GPT-3.5 (turbo) 16k older v1106": ["OpenAI__GPT_3_5_Turbo_16k__older_v1106_"],
-    "DeepSeek-Coder": ["deepseek_coder", ],
-    "DeepSeek-Chat": ["deepseek_chat", ],
+    "Gemma 2 9B": ["Google__Gemma_2_9B"],
+    "Gemma 2 9B 8K": ["Gemma_2_9B_8k"],
+    "Gemma 2 27B": ["Google__Gemma_2_27B"],
+    "Gemini Pro 1.5 Vision 1.0": ["Google__Gemini_Pro_Vision_1_0"],
+    "Gemini Pro 1.5": ["Google__Gemini_Pro_1_5"],
+    "Gemini Pro 1.0": ["Google__Gemini_Pro_1_0"],
+    "Gemini Flash 1.5" : ["Google__Gemini_Flash_1_5", "Gemini_1_5_Flash"],
+    "Goliath 120B": ["Goliath_120B"],
+    "Gemma 7B 8K instruct": ["Gemma_7B_8k_Instruct"],
+    "Palm 2 Code 32K": ["Google__PaLM_2_Code_Chat_32k"],
+    "Palm 2 Code": ["Google__PaLM_2_Code_Chat"],
+    "Palm 2 Chat 32K": ["Google__PaLM_2_Chat_32k"],
+    "Palm 2 Chat": ["Google__PaLM_2_Chat"],
+    "Fimbulvetr 11B v2": ["Fimbulvetr_11B_v2"],
+    "Dolphin Llama 3 70B": ["Dolphin_Llama_3_70B__"],
+    "Dolphin 2.9.2 Mixtral 8x22B": ["Dolphin_2_9_2_Mixtral_8x22B__"],
+    "Dolphin 2.6 Mixtral 8x7B": ["Dolphin_2_6_Mixtral_8x7B__"],
+    "DeepSeek-Coder": ["deepseek_coder", "DeepSeek_Coder_V2"],
+    "DeepSeek-Chat": ["deepseek_chat", "DeepSeek_V2_Chat"],
     "Llama 2 7b fp16": ["llama_2_7b_chat_fp16", ],
     "Llama 2 7b int8": ["llama_2_7b_chat_int8", ],
     "Xwin 70B": ["Xwin_70B", ],
@@ -136,11 +102,36 @@ Mistral__Mistral_7B_Instruct_v0_3
     "Phi 3 Medium 128K Instruct": ["Phi_3_Medium_128K_Instruct", ],
     "Phi 3 Medium 4K Instruct": ["Phi_3_Medium_4K_Instruct", ],
     "Phi 3.5 Mini 128K Instruct": ["Phi_3_5_Mini_128K_Instruct", ],
+    "Llama 2 13B": ["Meta__Llama_v2_13B_Chat"],
+    "Llama 3 8B 8K": ["Llama_3_8B_8k"],
+    "Llama 3 70B 8K": ["Llama_3_70B_8k"],
+    "Llama 3 8B instruct nitro": ["Meta__Llama_3_8B_Instruct__nitro_"],
+    "Llama 3 8B instruct extended": ["Meta__Llama_3_8B_Instruct__extended_"],
+    "Llama 3 8B instruct": ["Meta__Llama_3_8B_Instruct"],
+    "Llama 3 70B instruct nitro": ["Meta__Llama_3_70B_Instruct__nitro_"],
+    "Llama 3 70B instruct": ["Meta__Llama_3_70B_Instruct"],
+    "Llama 3 Sonar 8B": ["Perplexity__Llama3_Sonar_8B"],
+    "Llama 3 Sonar 70B": ["Perplexity__Llama3_Sonar_70B"],
+    "Llama 3 Stheno 8B v3.3 32K": ["Llama_3_Stheno_8B_v3_3_32K"],
+    "Llama 3 Lumimaid 8B extended": ["Llama_3_Lumimaid_8B__extended_"],
+    "Llama 3 Lumimaid 8B": ["Llama_3_Lumimaid_8B"],
+    "Llama 3 Lumimaid 70B": ["Llama_3_Lumimaid_70B"],
+    "Llama 3 Groq 8B 8K": ["Llama_3_Groq_8B_Tool_Use_Preview_8K"],
+    "Llama 3 Groq 70B 8K": ["Llama_3_Groq_70B_Tool_Use_Preview_8K"],
+    "Llama 3 Euryale 70B v2.1": ["Llama_3_Euryale_70B_v2_1"],
+    "Llama 3 Lunaris 8B": ["Llama_3_8B_Lunaris"],
+    "Llama 3.1 8B": ["Meta__Llama_3_1_8B_Instruct"],
+    "Llama 3.1 70B": ["Meta__Llama_3_1_70B_Instruct"],
+    "Llama 3.1 405B base": ["Meta__Llama_3_1_405B__base_"],
+    "Llama 3.1 405B instruct": ["Meta__Llama_3_1_405B_Instruct"],
     "Llama 3.1 Sonar 405B": ["Perplexity__Llama_3_1_Sonar_405B_Online", ],
-    "Llama 3.1 Sonar 70B": ["Perplexity__Llama_3_1_Sonar_70B_Online", "Perplexity__Llama_3_1_Sonar_70B_Online"],
-    "Llama 3.1 Sonar 8B": ["Perplexity__Llama_3_1_Sonar_8B_Online", "Perplexity__Llama_3_1_Sonar_8B"],
-    "Llama 3 Sonar 8B": ["Perplexity__Llama3_Sonar_8B_Online", "Perplexity__Llama3_Sonar_8B"],
-    "Llama 3 Sonar 70B": ["Perplexity__Llama3_Sonar_70B_Online", "Perplexity__Llama3_Sonar_70B"],
+    "Llama 3.1 Sonar 70B": ["Perplexity__Llama_3_1_Sonar_70B_Online"],
+    "Llama 3.1 Sonar 8B": ["Perplexity__Llama_3_1_Sonar_8B"],
+    "Llama 3.1 Euryale 70B v2.2": ["Llama_3_1_Euryale_70B_v2_2"],
+    "Llama 3.1 Instant 8B 128K": ["Llama_3_1_8B_Instant_128k"],
+    "Llama 3.1 Versatile 70B 128K": ["Llama_3_1_70B_Versatile_128k"],
+    "LlamaGuard 2 8B": ["Meta__LlamaGuard_2_8B"],
+    "LlamaGuard 3 8B 8K": ["Llama_Guard_3_8B_8K"],
     "OpenHeremes 2 5 Mistral 7B": ["OpenHermes_2_5_Mistral_7B", ],
     "Hermes 13B": ["Nous__Hermes_13B", ],
     "Hermes 2 Mixtral 8x7B DPO": ["Nous__Hermes_2_Mixtral_8x7B_DPO", ],
@@ -163,5 +154,21 @@ Mistral__Mistral_7B_Instruct_v0_3
     "Mixtral 8x22B": ["Mixtral_8x22B", ],
     "Mixtral 8x22B instruct": ["Mistral__Mixtral_8x22B_Instruct", ],
     "Mistal Nemo": ["Mistral_Nemo", ],
+    "Mistral 7B": ["Mistral_7B"],
     "Mistral 7B Instruct v0.3": ["Mistral__Mistral_7B_Instruct_v0_3", ],
+    "Mistral 7B Instruct v0.2": ["Mistral__Mistral_7B_Instruct_v0_2", ],
+    "Mistral 7B Instruct v0.1": ["Mistral__Mistral_7B_Instruct_v0_1", ],
+    "Mistral 7B Instruct nitro": ["Mistral__Mistral_7B_Instruct__nitro_", ],
+    "Mistral 7B Instruct": ["Mistral__Mistral_7B_Instruct"],
+    "Mistral Codestral Mamba": ["Mistral__Codestral_Mamba"],
+    "Mistral Tiny": ["Mistral_Tiny"],
+    "Mistral Small": ["Mistral_Small"],
+    "Mistral Medium": ["Mistral_Medium"],
+    "Mistral Large": ["Mistral_Large"],
+    "Mistral Large 2": ["Mistral_Large_2"],
+    "Mistral Nemo 12B Starcannon": ["Mistral_Nemo_12B_Starcannon"],
+    "Mistral Nemo 12B Celeste": ["Mistral_Nemo_12B_Celeste"],
+    "Midnight Rose 70B": ["Midnight_Rose_70B"],
+    "Mancer Weaver Alpha": ["Mancer__Weaver__alpha_"],
+    "Magnum 72B": ["Magnum_72B"],
 }
