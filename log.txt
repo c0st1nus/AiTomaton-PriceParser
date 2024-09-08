@@ -235,3 +235,132 @@
 06.09.2024 19:03 [Success] The deepseek has been parsed
 06.09.2024 19:03 [Success] The cloudflare has been parsed
 06.09.2024 19:03 [Success] Parsing Success
+08.09.2024 18:27 [Success] The groq has been parsed
+08.09.2024 18:27 [Success] The mistral has been parsed
+08.09.2024 18:27 [Success] The cohere has been parsed
+08.09.2024 18:27 [Success] The openAI has been parsed
+08.09.2024 18:27 [Success] The anthropic has been parsed
+08.09.2024 18:27 [Success] The google has been parsed
+08.09.2024 18:27 [Success] The microsoft has been parsed
+08.09.2024 18:27 [Success] The deepseek has been parsed
+08.09.2024 18:28 [Success] The groq has been parsed
+08.09.2024 18:28 [Success] The mistral has been parsed
+08.09.2024 18:28 [Success] The cohere has been parsed
+08.09.2024 18:28 [Success] The openAI has been parsed
+08.09.2024 18:28 [Success] The anthropic has been parsed
+08.09.2024 18:28 [Success] The google has been parsed
+08.09.2024 18:28 [Success] The microsoft has been parsed
+08.09.2024 18:28 [Success] The deepseek has been parsed
+08.09.2024 18:28 [Success] The cloudflare has been parsed
+08.09.2024 18:28 [Success] The novita has been parsed
+08.09.2024 18:28 [Success] Parsing Success
+08.09.2024 18:30 [Success] The groq has been parsed
+08.09.2024 18:30 [Success] The mistral has been parsed
+08.09.2024 18:30 [Success] The cohere has been parsed
+08.09.2024 18:30 [Success] The openAI has been parsed
+08.09.2024 18:30 [Success] The anthropic has been parsed
+08.09.2024 18:30 [Success] The google has been parsed
+08.09.2024 18:31 [Success] The microsoft has been parsed
+08.09.2024 18:31 [Success] The deepseek has been parsed
+08.09.2024 18:31 [Success] The cloudflare has been parsed
+08.09.2024 18:31 [Success] The novita has been parsed
+08.09.2024 18:31 [Success] Parsing Success
+08.09.2024 18:31 [Success] The groq has been parsed
+08.09.2024 18:31 [Success] The mistral has been parsed
+08.09.2024 18:31 [Success] The cohere has been parsed
+08.09.2024 18:31 [Success] The openAI has been parsed
+08.09.2024 18:31 [Success] The anthropic has been parsed
+08.09.2024 18:32 [Success] The google has been parsed
+08.09.2024 18:32 [Success] The microsoft has been parsed
+08.09.2024 18:32 [Success] The deepseek has been parsed
+08.09.2024 18:32 [Success] The cloudflare has been parsed
+08.09.2024 18:32 [Success] The novita has been parsed
+08.09.2024 18:32 [Success] Parsing Success
+08.09.2024 18:33 [Success] The groq has been parsed
+08.09.2024 18:33 [Success] The mistral has been parsed
+08.09.2024 18:33 [Success] The cohere has been parsed
+08.09.2024 18:33 [Success] The openAI has been parsed
+08.09.2024 18:33 [Success] The anthropic has been parsed
+08.09.2024 18:33 [Success] The google has been parsed
+08.09.2024 18:33 [Success] The microsoft has been parsed
+08.09.2024 18:34 [Success] The deepseek has been parsed
+08.09.2024 18:34 [Success] The cloudflare has been parsed
+08.09.2024 18:34 [Success] The novita has been parsed
+08.09.2024 18:34 [Success] Parsing Success
+08.09.2024 19:44 [Success] The groq has been parsed
+08.09.2024 19:44 [Success] The mistral has been parsed
+08.09.2024 19:44 [Success] The cohere has been parsed
+08.09.2024 19:44 [Success] The openAI has been parsed
+08.09.2024 19:45 [Success] The anthropic has been parsed
+08.09.2024 19:45 [Success] The google has been parsed
+08.09.2024 19:45 [Success] The microsoft has been parsed
+08.09.2024 19:45 [Success] The deepseek has been parsed
+08.09.2024 19:45 [Success] The cloudflare has been parsed
+08.09.2024 19:45 [Success] The novita has been parsed
+08.09.2024 19:45 [Success] Parsing Success
+08.09.2024 19:46 [Success] The groq has been parsed
+08.09.2024 19:46 [Success] The mistral has been parsed
+08.09.2024 19:46 [Success] The cohere has been parsed
+08.09.2024 19:46 [Success] The openAI has been parsed
+08.09.2024 19:46 [Success] The anthropic has been parsed
+08.09.2024 19:46 [Success] The google has been parsed
+08.09.2024 19:47 [Success] The microsoft has been parsed
+08.09.2024 19:47 [Success] The deepseek has been parsed
+08.09.2024 19:47 [Success] The cloudflare has been parsed
+08.09.2024 19:47 [Success] The novita has been parsed
+08.09.2024 19:47 [Success] Parsing Success
+08.09.2024 19:48 [Success] The groq has been parsed
+08.09.2024 19:48 [Success] The mistral has been parsed
+08.09.2024 19:48 [Success] The cohere has been parsed
+08.09.2024 19:48 [Success] The openAI has been parsed
+08.09.2024 19:48 [Success] The anthropic has been parsed
+08.09.2024 19:48 [Success] The google has been parsed
+08.09.2024 19:48 [Success] The microsoft has been parsed
+08.09.2024 19:49 [Success] The deepseek has been parsed
+08.09.2024 19:49 [Success] The cloudflare has been parsed
+08.09.2024 19:49 [Success] The novita has been parsed
+08.09.2024 19:49 [Success] Parsing Success
+08.09.2024 19:50 [Success] The groq has been parsed
+08.09.2024 19:50 [Success] The mistral has been parsed
+08.09.2024 19:50 [Success] The cohere has been parsed
+08.09.2024 19:50 [Success] The openAI has been parsed
+08.09.2024 19:50 [Success] The anthropic has been parsed
+08.09.2024 19:51 [Success] The google has been parsed
+08.09.2024 19:51 [Success] The microsoft has been parsed
+08.09.2024 19:51 [Success] The deepseek has been parsed
+08.09.2024 19:51 [Success] The cloudflare has been parsed
+08.09.2024 19:51 [Success] The novita has been parsed
+08.09.2024 19:51 [Success] Parsing Success
+08.09.2024 19:53 [Success] The groq has been parsed
+08.09.2024 19:53 [Success] The mistral has been parsed
+08.09.2024 19:53 [Success] The cohere has been parsed
+08.09.2024 19:53 [Success] The openAI has been parsed
+08.09.2024 19:53 [Success] The anthropic has been parsed
+08.09.2024 19:53 [Success] The google has been parsed
+08.09.2024 19:53 [Success] The microsoft has been parsed
+08.09.2024 19:54 [Success] The deepseek has been parsed
+08.09.2024 19:54 [Success] The cloudflare has been parsed
+08.09.2024 19:54 [Success] The novita has been parsed
+08.09.2024 19:54 [Success] Parsing Success
+08.09.2024 20:09 [Success] The groq has been parsed
+08.09.2024 20:09 [Success] The mistral has been parsed
+08.09.2024 20:09 [Success] The cohere has been parsed
+08.09.2024 20:09 [Success] The openAI has been parsed
+08.09.2024 20:09 [Success] The anthropic has been parsed
+08.09.2024 20:09 [Success] The google has been parsed
+08.09.2024 20:09 [Success] The microsoft has been parsed
+08.09.2024 20:10 [Success] The deepseek has been parsed
+08.09.2024 20:10 [Success] The cloudflare has been parsed
+08.09.2024 20:10 [Success] The novita has been parsed
+08.09.2024 20:10 [Success] Parsing Success
+08.09.2024 20:13 [Success] The groq has been parsed
+08.09.2024 20:13 [Success] The mistral has been parsed
+08.09.2024 20:13 [Success] The cohere has been parsed
+08.09.2024 20:13 [Success] The openAI has been parsed
+08.09.2024 20:13 [Success] The anthropic has been parsed
+08.09.2024 20:13 [Success] The google has been parsed
+08.09.2024 20:13 [Success] The microsoft has been parsed
+08.09.2024 20:14 [Success] The deepseek has been parsed
+08.09.2024 20:14 [Success] The cloudflare has been parsed
+08.09.2024 20:14 [Success] The novita has been parsed
+08.09.2024 20:14 [Success] Parsing Success

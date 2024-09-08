@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 from parsers import *
-import os
+import re
 import handler
 
 def get_data():
@@ -48,29 +48,29 @@ def get_data():
         log_file.write(f"{current_time} [Success] Parsing Success\n")
     data = result
     consolidated_data = {}
-    for provider, models in data.items():
-        for model_name, prices in models.items():
-            if not model_name or 'input_price' not in prices or 'output_price' not in prices:
-                print(model_name)
+    filter = json.load(open("filter.json", 'r', encoding="UTF-8"))
+    data = json.load(open("test.json", 'r', encoding="UTF-8"))
+    consolidated_data = {}
+    filter = json.load(open("filter.json", 'r', encoding="UTF-8"))
+    for providers, models in data.items():
+        for model_name, provider in models.items():
+            real_model_name = search_model(clean_column_name(model_name))
+            if real_model_name is None:
                 continue
+            if real_model_name == 'SKIP':
+                    continue
             try:
-                input_price = round(float(prices['input_price'].replace(',', '.')), 2)
-                output_price = round(float(prices['output_price'].replace(',', '.')), 2)
+                if real_model_name not in consolidated_data:
+                    consolidated_data[real_model_name] = {}
+                consolidated_data[real_model_name][providers] = {
+                    "input_price": str(round(float(data[providers][model_name]["input_price"]), 2)),
+                    "output_price": str(round(float(data[providers][model_name]["output_price"]), 2))
+                }
             except ValueError:
-                print(model_name)
-                continue
-            prices['input_price'] = input_price
-            prices['output_price'] = output_price
-            found = False
-            for existing_name in consolidated_data.keys():
-                if similarity(existing_name, model_name):
-                    consolidated_data[existing_name][provider] = prices
-                    found = True
-                    break
-            if not found:
-                consolidated_data[model_name] = {provider: prices}
-    with open("test.json", 'w', encoding="UTF-8") as f:
-        json.dump(result, f)
+                consolidated_data[real_model_name][providers] = {
+                    "input_price": str(round(float(data[providers][model_name]["input_price"].replace(',', '.')), 2)),
+                    "output_price": str(round(float(data[providers][model_name]["output_price"].replace(',', '.')), 2))
+                }
     handler.save_data(consolidated_data, calculate_average_prices(consolidated_data))
 
 def log_success(service):
@@ -79,11 +79,22 @@ def log_success(service):
     with open("log.txt", "a") as log_file:
         log_file.write(log_message)
 
-def similarity(s1, s2):
-    s1, s2 = ''.join(filter(str.isalnum, s1.lower())), ''.join(filter(str.isalnum, s2.lower()))
-    intersection = len(set(s1) & set(s2))
-    similarity_ratio = intersection / max(len(s1), len(s2))
-    return similarity_ratio >= 1
+def search_model(model_name):
+    with open("filter.json", 'r', encoding="UTF-8") as file:
+        filters = json.load(file)
+    for key, models in filters.items():
+        if model_name in models:
+            return str(key)
+    return None
+
+def clean_column_name(name):
+    if not name:
+        return None
+    name = re.sub(r'[^0-9a-zA-Z_]', '_', name)
+    if name[0].isdigit():
+        name = 'col_' + name
+    return name
+
 
 def calculate_average_prices(data):
     total_input_price = 0
