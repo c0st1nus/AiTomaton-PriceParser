@@ -1,6 +1,6 @@
-
 {
     "SKIP": [
+        "None",
         "Reflection_70B__free_",
         "Auto__best_for_prompt_",
         "Anthropic__Claude_v2__self_moderated_",
@@ -48,7 +48,8 @@
         "AI21__Jamba_Instruct"
     ],
     "Airoboros 70B": [
-        "Airoboros_70B"
+        "Airoboros_70B",
+        "airoboros_l2_70b"
     ],
     "Codestral": [
         "Codestral"
@@ -159,7 +160,8 @@
         "OpenAI__GPT_3_5_Turbo_16k__older_v1106_"
     ],
     "Gemma 2 9B": [
-        "Google__Gemma_2_9B"
+        "Google__Gemma_2_9B",
+        "gemma_2_9b_it"
     ],
     "Gemma 2 9B 8K": [
         "Gemma_2_9B_8k"
@@ -205,7 +207,8 @@
         "Dolphin_Llama_3_70B__"
     ],
     "Dolphin 2.9.2 Mixtral 8x22B": [
-        "Dolphin_2_9_2_Mixtral_8x22B__"
+        "Dolphin_2_9_2_Mixtral_8x22B__",
+        "dolphin_mixtral_8x22b"
     ],
     "Dolphin 2.6 Mixtral 8x7B": [
         "Dolphin_2_6_Mixtral_8x7B__"
@@ -216,7 +219,8 @@
     ],
     "DeepSeek-Chat": [
         "deepseek_chat",
-        "DeepSeek_V2_Chat"
+        "DeepSeek_V2_Chat",
+        "DeepSeek_V2_5"
     ],
     "DBRX 132B Instruct": [
         "Databricks__DBRX_132B_Instruct"
@@ -245,13 +249,16 @@
         "mistral_7b_instruct"
     ],
     "Lzlv 70B": [
-        "lzlv_70B"
+        "lzlv_70B",
+        "lzlv_70b"
     ],
     "WizardLM 2 7B": [
-        "WizardLM_2_7B"
+        "WizardLM_2_7B",
+        "wizardlm_2_7b"
     ],
     "WizardLM 2 8x22B": [
-        "WizardLM_2_8x22B"
+        "WizardLM_2_8x22B",
+        "wizardlm_2_8x22b"
     ],
     "Toppy M 7B": [
         "Toppy_M_7B"
@@ -327,13 +334,15 @@
         "Meta__Llama_3_8B_Instruct__extended_"
     ],
     "Llama 3 8B instruct": [
-        "Meta__Llama_3_8B_Instruct"
+        "Meta__Llama_3_8B_Instruct",
+        "llama_3_8b_instruct"
     ],
     "Llama 3 70B instruct nitro": [
         "Meta__Llama_3_70B_Instruct__nitro_"
     ],
     "Llama 3 70B instruct": [
-        "Meta__Llama_3_70B_Instruct"
+        "Meta__Llama_3_70B_Instruct",
+        "llama_3_70b_instruct"
     ],
     "Llama 3 Sonar 8B": [
         "Perplexity__Llama3_Sonar_8B"
@@ -360,22 +369,26 @@
         "Llama_3_Groq_70B_Tool_Use_Preview_8K"
     ],
     "Llama 3 Euryale 70B v2.1": [
-        "Llama_3_Euryale_70B_v2_1"
+        "Llama_3_Euryale_70B_v2_1",
+        "l3_70b_euryale_v2_1"
     ],
     "Llama 3 Lunaris 8B": [
         "Llama_3_8B_Lunaris"
     ],
     "Llama 3.1 8B": [
-        "Meta__Llama_3_1_8B_Instruct"
+        "Meta__Llama_3_1_8B_Instruct",
+        "llama_3_1_8b_instruct"
     ],
     "Llama 3.1 70B": [
-        "Meta__Llama_3_1_70B_Instruct"
+        "Meta__Llama_3_1_70B_Instruct",
+        "llama_3_1_70b_instruct"
     ],
     "Llama 3.1 405B base": [
         "Meta__Llama_3_1_405B__base_"
     ],
     "Llama 3.1 405B instruct": [
-        "Meta__Llama_3_1_405B_Instruct"
+        "Meta__Llama_3_1_405B_Instruct",
+        "llama_3_1_405b_instruct"
     ],
     "Llama 3.1 Sonar 405B": [
         "Perplexity__Llama_3_1_Sonar_405B_Online"
@@ -402,10 +415,15 @@
         "Llama_Guard_3_8B_8K"
     ],
     "OpenHeremes 2 5 Mistral 7B": [
-        "OpenHermes_2_5_Mistral_7B"
+        "OpenHermes_2_5_Mistral_7B",
+        "openhermes_2_5_mistral_7b"
+    ],
+    "Hermes 2 Pro Llama 3 8B": [
+        "hermes_2_pro_llama_3_8b"
     ],
     "Hermes 13B": [
-        "Nous__Hermes_13B"
+        "Nous__Hermes_13B",
+        "nous_hermes_llama2_13b"
     ],
     "Hermes 2 Mixtral 8x7B DPO": [
         "Nous__Hermes_2_Mixtral_8x7B_DPO"
@@ -429,7 +447,8 @@
         "Nous__Hermes_3_405B_Instruct__extended_"
     ],
     "OpenChat 3.5 7B": [
-        "OpenChat_3_5_7B"
+        "OpenChat_3_5_7B",
+        "openchat_7b"
     ],
     "OpenChat 3.6 8B": [
         "OpenChat_3_6_8B"
@@ -441,7 +460,8 @@
         "MythoMist_7B"
     ],
     "MythoMax 13B": [
-        "MythoMax_13B"
+        "MythoMax_13B",
+        "mythomax_l2_13b"
     ],
     "MythoMax 13B extended": [
         "MythoMax_13B__extended_"
@@ -471,7 +491,7 @@
         "Mistral__Mixtral_8x22B_Instruct"
     ],
     "Mistal Nemo": [
-        "Mistral_Nemo", "Mistral__Mistral_Nemo"
+        "Mistral_Nemo", "Mistral__Mistral_Nemo", "mistral_nemo"
     ],
     "Mistral 7B": [
         "Mistral_7B"
@@ -516,7 +536,8 @@
         "Mistral_Nemo_12B_Celeste"
     ],
     "Midnight Rose 70B": [
-        "Midnight_Rose_70B"
+        "Midnight_Rose_70B",
+        "midnight_rose_70b"
     ],
     "Mancer Weaver Alpha": [
         "Mancer__Weaver__alpha_"

@@ -1,7 +1,9 @@
 import requests
 import json
+import time
 
 def openrouter(url="https://openrouter.ai/api/v1/models"):
+    start_time = time.time()
     result = requests.get(url).content.decode('utf-8')
     data = json.loads(result)["data"]
     
@@ -12,7 +14,9 @@ def openrouter(url="https://openrouter.ai/api/v1/models"):
             "input_price": str(float(data[i]["pricing"]["prompt"]) * 1000000),
             "output_price": str(float(data[i]["pricing"]["completion"]) * 1000000)
         }
-    return result
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return result, elapsed_time
 
 if __name__ == "__main__":
     result = openrouter()

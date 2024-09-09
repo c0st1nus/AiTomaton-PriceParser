@@ -4,6 +4,7 @@
 *.user
 *.sln.docstates
 venv
+.venv
 test.py
 ./log.txt
 # Python

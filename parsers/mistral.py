@@ -1,8 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import time
 
 def mistral(url = "https://mistral.ai/technology/"):
+    start_time = time.time()
     response = requests.get(url)
     html_content = response.text
     soup = BeautifulSoup(html_content, 'html.parser')
@@ -25,7 +27,9 @@ def mistral(url = "https://mistral.ai/technology/"):
                     "output_price": output_price
                 }
 
-    return data
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return data, elapsed_time
 
 if __name__ == "__main__":
     result = mistral()

@@ -3,62 +3,79 @@ from datetime import datetime
 from parsers import *
 import re
 import handler
+import concurrent.futures
+import time
+
+def log_service_time(service, elapsed_time):
+    current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
+    log_message = f"{current_time} [Info] Service {service} completed in {elapsed_time:.5f} seconds\n"
+    with open("log.txt", "a") as log_file:
+        log_file.write(log_message)
 
 def get_data():
-    service = ''
+    services = {
+        'openrouter': openrouter,
+        'groq': groq,
+        'mistral': mistral,
+        'cohere': cohere,
+        'openAI': openAI,
+        'anthropic': anthropic,
+        'google': google,
+        'microsoft': microsoft,
+        'deepseek': deepseek,
+        'cloudflare': cloudflare,
+        'novita': novita
+    }
     result = {}
     print("Start of parsing")
     print('=' * 20)
-    service = 'openrouter'
-    result['openrouter'] = openrouter()
-    service = 'groq'
-    result['groq'] = groq()
-    log_success(service)
-    service = 'mistral'
-    result['mistral'] = mistral()
-    log_success(service)
-    service = 'cohere'
-    result['cohere'] = cohere()
-    log_success(service)
-    service = 'openAI'
-    result['openAI'] = openAI()
-    log_success(service)
-    service = 'anthropic'
-    result['anthropic'] = anthropic()
-    log_success(service)
-    service = 'google'
-    result['google'] = google()
-    log_success(service)
-    service = 'microsoft'
-    result['microsoft'] = microsoft()
-    log_success(service)
-    service = 'deepseek'
-    result['deepseek'] = deepseek()
-    log_success(service)
-    service = 'cloudflare'
-    result['cloudflare'] = cloudflare()
-    log_success(service)
-    service = 'novita'
-    result['novita'] = cloudflare()
-    log_success(service)
+
+    start_time = time.time()
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = {executor.submit(func): name for name, func in services.items()}
+        for future in concurrent.futures.as_completed(futures):
+            service = futures[future]
+            try:
+                service_result, service_elapsed_time = future.result()
+                result[service] = service_result
+                log_service_time(service, service_elapsed_time)
+            except Exception as e:
+                print(f"Error parsing {service}: {e}")
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Parsing completed in {elapsed_time:.2f} seconds")
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Parsing completed in {elapsed_time:.2f} seconds")
+
     print('Parsing Success')
     print('=' * 20)
     current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
     with open("log.txt", "a") as log_file:
-        log_file.write(f"{current_time} [Success] Parsing Success\n")
-    data = result
+        log_file.write(f"{current_time} [Success] Parsing Success in {elapsed_time:.2f} seconds\n")
+
+    consolidated_data = consolidate_data(result)
+    handler.save_data(consolidated_data, calculate_average_prices(consolidated_data))
+
+def log_success(service):
+    current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
+    log_message = f"{current_time} [Success] The {service} has been parsed\n"
+    with open("log.txt", "a") as log_file:
+        log_file.write(log_message)
+
+def consolidate_data(data):
     consolidated_data = {}
-    filter = json.load(open("filter.json", 'r', encoding="UTF-8"))
-    data = json.load(open("test.json", 'r', encoding="UTF-8"))
-    consolidated_data = {}
-    filter = json.load(open("filter.json", 'r', encoding="UTF-8"))
     for providers, models in data.items():
         for model_name, provider in models.items():
-            real_model_name = search_model(clean_column_name(model_name))
+            clean_column = clean_column_name(model_name)
+            real_model_name = search_model(clean_column)
+            if real_model_name == 'SKIP':
+                continue
             if real_model_name is None:
                 continue
-            if real_model_name == 'SKIP':
-                    continue
             try:
                 if real_model_name not in consolidated_data:
                     consolidated_data[real_model_name] = {}
@@ -71,17 +88,10 @@ def get_data():
                     "input_price": str(round(float(data[providers][model_name]["input_price"].replace(',', '.')), 2)),
                     "output_price": str(round(float(data[providers][model_name]["output_price"].replace(',', '.')), 2))
                 }
-    handler.save_data(consolidated_data, calculate_average_prices(consolidated_data))
-
-def log_success(service):
-    current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
-    log_message = f"{current_time} [Success] The {service} has been parsed\n"
-    with open("log.txt", "a") as log_file:
-        log_file.write(log_message)
+    return consolidated_data
 
 def search_model(model_name):
-    with open("filter.json", 'r', encoding="UTF-8") as file:
-        filters = json.load(file)
+    filters = json.load(open("filter.json", 'r', encoding="UTF-8"))
     for key, models in filters.items():
         if model_name in models:
             return str(key)
@@ -94,7 +104,6 @@ def clean_column_name(name):
     if name[0].isdigit():
         name = 'col_' + name
     return name
-
 
 def calculate_average_prices(data):
     total_input_price = 0
@@ -124,3 +133,4 @@ def calculate_average_prices(data):
         "av_output_price": av_output_price
     }
     return average_prices
+get_data()

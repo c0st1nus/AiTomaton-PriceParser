@@ -1,7 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
 def cohere(url="https://cohere.com/pricing"):
+    start_time = time.time()
     response = requests.get(url)
     html_content = response.content
 
@@ -23,7 +25,10 @@ def cohere(url="https://cohere.com/pricing"):
                 "output_price": output_price
             }
 
-    return data
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return data, elapsed_time
+
 if __name__ == "__main__":
     result = cohere()
     print(result)

@@ -3,8 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 import re
 import os
+import time
 
 def microsoft(url="https://azure.microsoft.com/en-us/pricing/details/phi-3/?cdn=disable"):
+    start_time = time.time()
     geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
     firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
 
@@ -42,7 +44,9 @@ def microsoft(url="https://azure.microsoft.com/en-us/pricing/details/phi-3/?cdn=
                     "output_price": output_price
                 }
 
-    return data
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return data, elapsed_time
 
 if __name__ == "__main__":
     result = microsoft()

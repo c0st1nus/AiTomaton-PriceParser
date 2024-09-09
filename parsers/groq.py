@@ -3,8 +3,10 @@ from selenium.webdriver.firefox.service import Service
 from bs4 import BeautifulSoup
 import re
 import os
+import time
 
 def groq(url="https://groq.com/pricing/"):
+    start_time = time.time()
     geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
     firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
 
@@ -35,7 +37,9 @@ def groq(url="https://groq.com/pricing/"):
             "output_price": output_price
         }
     
-    return data
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return data, elapsed_time
 
 if __name__ == "__main__":
     result = groq()

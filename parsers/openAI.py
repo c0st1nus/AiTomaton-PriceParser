@@ -2,11 +2,11 @@ import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.firefox.options import Options
-from webdriver_manager.firefox import GeckoDriverManager
+import time
 import os
 
 def openAI(url="https://openai.com/api/pricing/"):
+    start_time = time.time()
     geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
     firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
 
@@ -45,7 +45,9 @@ def openAI(url="https://openai.com/api/pricing/"):
                         "output_price": output_price
                     }
 
-    return data
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return data, elapsed_time
 
 if __name__ == "__main__":
     result = openAI()

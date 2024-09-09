@@ -1,29 +1,15 @@
-from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.common.by import By
+import requests
 from bs4 import BeautifulSoup
-import os
+import time
 
 def cloudflare(url="https://developers.cloudflare.com/workers-ai/platform/pricing/"):
-    geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
-    firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
-
-    service = Service(geckodriver_path)
-    options = webdriver.FirefoxOptions()
-    options.binary_location = firefox_path
-    options.add_argument('--headless')
-    driver = webdriver.Firefox(service=service, options=options)
+    start_time = time.time()
+    response = requests.get(url)
+    response.raise_for_status()  # Проверка на успешный запрос
     
-    driver.get(url)
-    driver.implicitly_wait(1)
+    soup = BeautifulSoup(response.content, 'html.parser')
     
-    table_element = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/main/div[2]/div/div[1]/table[6]')
-    html_content = table_element.get_attribute('outerHTML')
-    driver.quit()
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-    
-    table = soup.find('table')
+    table = soup.find_all('table')[5]  # Изменено на find_all для выбора 6-й таблицы
     
     data = {}
     
@@ -38,7 +24,9 @@ def cloudflare(url="https://developers.cloudflare.com/workers-ai/platform/pricin
             "output_price": output_price
         }
     
-    return data 
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return data, elapsed_time
 
 if __name__ == "__main__":
     result = cloudflare()

@@ -1,9 +1,7 @@
-import re
+import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.firefox.options import Options
-from webdriver_manager.firefox import GeckoDriverManager
 import os
 
 def transform_data(data):
@@ -18,6 +16,7 @@ def transform_data(data):
     return new_data
 
 def google(url="https://ai.google.dev/pricing?hl=ru"):
+    start_time = time.time()
     geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
     firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
 
@@ -47,7 +46,9 @@ def google(url="https://ai.google.dev/pricing?hl=ru"):
             "output_price": output_price
         }
     data = transform_data(data)
-    return data
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return data, elapsed_time
 
 if __name__ == "__main__":
     result = google()

@@ -6,8 +6,10 @@ from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import re
 import os
+import time
 
 def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
+    start_time = time.time()
     geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
     firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
 
@@ -26,8 +28,6 @@ def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
     
     html_content = driver.page_source
     driver.quit()
-    with open('anthropic.html', 'w', encoding='utf-8') as file:
-        file.write(html_content)
     soup = BeautifulSoup(html_content, 'html.parser')
     cards = soup.find_all('article', class_='PricingCard_pricingCard__I0GPp')
 
@@ -58,7 +58,9 @@ def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
         if price_data["input_price"] or price_data["output_price"]:  # Изменено
             data[model] = price_data
 
-    return data
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    return data, elapsed_time
 
 if __name__ == '__main__':
     print(anthropic())
