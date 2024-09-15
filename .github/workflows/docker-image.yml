@@ -9,11 +9,21 @@ jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Build and Push image
+      - uses: actions/checkout@v4
+      - name: Print Commit SHA
+        run: echo "Commit SHA: ${{ github.sha }}"
+      - name: Verify Commit SHA
         run: |
-          echo ${{ github.sha }}
-          docker login -u c0s1nus -p ${{ secrets.GH_PAT }} ghcr.io
+          if [ -z "${{ github.sha }}" ]; then
+            echo "Error: Commit SHA is empty"
+            exit 1
+          else
+            echo "Commit SHA is valid: ${{ github.sha }}"
+          fi
+      - name: Build and Push image
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          echo $GH_PAT | docker login ghcr.io -u c0s1nus --password-stdin
           docker build -t ghcr.io/c0s1nus/aitomaton-priceparser:${{ github.sha }} .
           docker push ghcr.io/c0s1nus/aitomaton-priceparser:${{ github.sha }}
-        
