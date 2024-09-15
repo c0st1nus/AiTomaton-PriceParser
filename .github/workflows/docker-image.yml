@@ -11,9 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build and Push image
-        - run: |
-          echo ${{ github.sha }}
+        run: |
           docker login -u c0s1nus -p {{ secrets.GH_PAT }} ghcr.io
           docker build -t ghcr.io/c0s1nus/ghcr-test:${{ github.sha }} .
-          docker push ghcr.io/c0s1nus/ghcr-test:${{ github.sha }}
+          docker push ghcr.io/c0s1nus/ghcr-test:
         
