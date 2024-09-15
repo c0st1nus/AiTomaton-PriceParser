@@ -1,0 +1,18 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: |
+        docker login -u c0s1nus -p {{ secrets.GH_PAT }} ghcr.io
+        docker build -t ghcr.io/c0s1nus/ghcr-test:latest .
+        docker push ghcr.io/c0s1nus/ghcr-test:latest
