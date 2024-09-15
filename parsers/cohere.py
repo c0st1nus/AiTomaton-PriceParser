@@ -9,7 +9,7 @@ def cohere(url="https://cohere.com/pricing"):
 
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    models = soup.select('div[data-component="ModelCard"]')  # Изменено для выбора всех моделей
+    models = soup.select('div[data-component="ModelCard"]')
     data = {}
 
     for model_element in models:

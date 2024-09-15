@@ -1,55 +1,91 @@
 import time
+import re
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
-import os
+import requests
 
-def transform_data(data):
-    new_data = {}
-    for key, value in data.items():
-        new_key = key.replace(" уже доступен", "")
-        new_value = {
-            'input_price': value['input_price'].replace('$', '').split()[0],
-            'output_price': value['output_price'].replace('$', '').split()[0]
-        }
-        new_data[new_key] = new_value
-    return new_data
+def gemini1(gemini_pro_tab):
+    if gemini_pro_tab:
+        model_name_elem = gemini_pro_tab.find('h2', class_='gemini-tier-name')
+        if model_name_elem:
+            model_name = model_name_elem.get('data-text', '').strip()
+            model_name = model_name.replace("Available now", "").strip()
+        
+        input_price = None
+        output_price = None
+        
+        tier_subgroups = gemini_pro_tab.find_all('div', class_='gemini-tier-group')
+        for subgroup in tier_subgroups:
+            for line in subgroup.find_all('div', class_='gemini-tier-line'):
+                label = line.find('p', class_='gemini-type-l2')
+                value = line.find('p', class_='gemini-type-t3')
+                if label and value:
+                    label_text = label.text.strip().lower()
+                    value_text = value.text.strip()
+                    price_match = re.search(r'\$([0-9.]+)', value_text)
+                    if price_match:
+                        price = price_match.group(1)
+                        if 'input pricing' in label_text:
+                            input_price = price
+                        elif 'output pricing' in label_text:
+                            output_price = price
+                    elif 'free of charge' in value_text.lower():
+                        if 'input pricing' in label_text:
+                            input_price = 'Free of charge'
+                        elif 'output pricing' in label_text:
+                            output_price = 'Free of charge'
+        
+        if model_name and input_price and output_price:
+            return {"input_price": input_price, "output_price": output_price}
 
-def google(url="https://ai.google.dev/pricing?hl=ru"):
+def google(url="https://ai.google.dev/pricing/"):
     start_time = time.time()
-    geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
-    firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
+    result = requests.get(url).content
+    soup = BeautifulSoup(result, 'html.parser')
+    
+    models = {}
+    tabs = soup.find_all('div', class_='gemini-pricing-tabs gemini-tabs-data')
+    
+    for tab in tabs:
+        pricing_tabs = tab.find_all('div', class_='gemini-pricing-tab', recursive=True)
+        
+        for pricing_tab in pricing_tabs:
+            model_name_elem = pricing_tab.find('h2', class_='gemini-tier-name')
+            if model_name_elem:
+                model_name = model_name_elem.get('data-text', '').strip()
+                model_name = model_name.replace("Available now", "").strip()
+            else:
+                continue
+            
+            input_price = None
+            output_price = None
+            
+            tier_subgroups = pricing_tab.find_all('div', class_='gemini-tier-subgroup', recursive=True)
+            for subgroup in tier_subgroups:
+                for line in subgroup.find_all('div', class_='gemini-tier-line', recursive=True):
+                    label = line.find('p', class_='gemini-type-l2')
+                    value = line.find('p', class_='gemini-type-t3')
+                    if label and value:
+                        label_text = label.text.strip().lower()
+                        value_text = value.text.strip()
+                        price_match = re.search(r'\$([0-9.]+)', value_text)
+                        if price_match:
+                            price = price_match.group(1)
+                            if 'input pricing' in label_text:
+                                input_price = price
+                            elif 'output pricing' in label_text:
+                                output_price = price
+            
+            if model_name and input_price and output_price:
+                models[model_name] = {
+                    'input_price': input_price,
+                    'output_price': output_price
+                }
+    models["Gemini 1 Pro"] = gemini1(soup.find('div', {'data-tab': 'gemini-1-pro'}))
 
-    service = Service(geckodriver_path)
-    options = webdriver.FirefoxOptions()
-    options.binary_location = firefox_path
-    options.add_argument('--headless')
-    driver = webdriver.Firefox(service=service, options=options)
-    driver.get(url)
-    driver.implicitly_wait(1)
-    html_content = driver.page_source
-    driver.quit()
-    soup = BeautifulSoup(html_content, 'html.parser')
-    model_selector = r'#gemini-1\.5-flash-available-now'
-    input_price_selector = r'.gemini-pricing-tabs > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > p:nth-child(1)'
-    output_price_selector = r'.gemini-pricing-tabs > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > p:nth-child(1)'
-    model_element = soup.select_one(model_selector)
-    input_price_element = soup.select_one(input_price_selector)
-    output_price_element = soup.select_one(output_price_selector)
-    model = model_element.text.strip() if model_element else None
-    input_price = input_price_element.text.strip() if input_price_element else None
-    output_price = output_price_element.text.strip() if output_price_element else None
-    data = {}
-    if model:
-        data[model] = {
-            "input_price": input_price,
-            "output_price": output_price
-        }
-    data = transform_data(data)
     end_time = time.time()
     elapsed_time = end_time - start_time
-    return data, elapsed_time
+    
+    return models, elapsed_time
 
 if __name__ == "__main__":
-    result = google()
-    print(result)
+    print(google())

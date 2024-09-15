@@ -1,6 +1,9 @@
 {
     "SKIP": [
         "None",
+        "Qwen2_VL_7B_Instruct__free_",
+        "Nous__Hermes_3_405B_Instruct__free_",
+        "Mistral__Pixtral_12B__free_",
         "Reflection_70B__free_",
         "Auto__best_for_prompt_",
         "Anthropic__Claude_v2__self_moderated_",
@@ -66,6 +69,14 @@
     ],
     "Claude 1.1 instant": [
         "Anthropic__Claude_Instant_v1_1"
+    ],
+    "o1 mini": [
+        "OpenAI__o1_mini__2024_09_12_",
+        "OpenAI__o1_mini"
+    ],
+    "o1 prewiev": [
+        "OpenAI__o1_preview__2024_09_12_",
+        "OpenAI__o1_preview"
     ],
     "Claude 1.2": [
         "Anthropic__Claude_v1_2"
@@ -173,9 +184,11 @@
         "Google__Gemini_Pro_Vision_1_0"
     ],
     "Gemini Pro 1.5": [
-        "Google__Gemini_Pro_1_5"
+        "Google__Gemini_Pro_1_5",
+        "Gemini_1_5_Pro"
     ],
     "Gemini Pro 1.0": [
+        "Gemini_1_Pro",
         "Google__Gemini_Pro_1_0"
     ],
     "Gemini Flash 1.5": [
@@ -357,7 +370,7 @@
         "Llama_3_Lumimaid_8B__extended_"
     ],
     "Llama 3 Lumimaid 8B": [
-        "Llama_3_Lumimaid_8B"
+        "Llama_3_Lumimaid_8B", "Lumimaid_v0_2_8B"
     ],
     "Llama 3 Lumimaid 70B": [
         "Llama_3_Lumimaid_70B"

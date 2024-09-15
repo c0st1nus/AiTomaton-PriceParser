@@ -5,11 +5,11 @@ import time
 def cloudflare(url="https://developers.cloudflare.com/workers-ai/platform/pricing/"):
     start_time = time.time()
     response = requests.get(url)
-    response.raise_for_status()  # Проверка на успешный запрос
+    response.raise_for_status()
     
     soup = BeautifulSoup(response.content, 'html.parser')
     
-    table = soup.find_all('table')[5]  # Изменено на find_all для выбора 6-й таблицы
+    table = soup.find_all('table')[5]
     
     data = {}
     

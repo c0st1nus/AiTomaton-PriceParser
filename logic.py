@@ -133,4 +133,3 @@ def calculate_average_prices(data):
         "av_output_price": av_output_price
     }
     return average_prices
-get_data()
