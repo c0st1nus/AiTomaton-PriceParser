@@ -11,5 +11,5 @@ jobs:
     - name: Build the Docker image
       run: |
         docker login -u c0s1nus -p ${{ secrets.GH_PAT }} ghcr.io
-        docker build -t ghcr.io/c0s1nus/ghcr-test:latest .
-        docker push ghcr.io/c0s1nus/ghcr-test:latest
+        docker build -t ghcr.io/c0s1nus/aitomaton-priceparser:latest .
+        docker push ghcr.io/c0s1nus/aitomaton-priceparser:latest
