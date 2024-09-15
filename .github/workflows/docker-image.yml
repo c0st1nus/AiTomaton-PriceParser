@@ -7,12 +7,13 @@ on:
 
 jobs:
   build_and_publish:
-    - uses: actions/checkout@v3
-    - name: Print Commit SHA
-      run: echo "Commit SHA: ${{ github.sha }}"
-    - name: Build and Push image
-      run: |
-        docker login -u c0s1nus -p ${{ secrets.GH_PAT }} ghcr.io
-        docker build -t ghcr.io/c0s1nus/ghcr-test:${{ github.sha }} .
-        docker push ghcr.io/c0s1nus/ghcr-test:${{ github.sha }}
-        
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Print Commit SHA
+        run: echo "Commit SHA: ${{ github.sha }}"
+      - name: Build and Push image
+        run: |
+          docker login -u c0s1nus -p ${{ secrets.GH_PAT }} ghcr.io
+          docker build -t ghcr.io/c0s1nus/ghcr-test:${{ github.sha }} .
+          docker push ghcr.io/c0s1nus/ghcr-test:${{ github.sha }}
