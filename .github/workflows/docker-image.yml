@@ -34,7 +34,7 @@ jobs:
 
       - name: Convert repository name to lowercase
         id: lowercase_repo
-        run: echo "LOWERCASE_REPO=${{ github.repository }}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_ENV
+        run: echo "LOWERCASE_REPO=$(echo ${GITHUB_REPOSITORY} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
       - name: Build and push Docker image
         id: push
@@ -42,5 +42,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ env.LOWERCASE_REPO }}:commit-${{ env.COMMIT_SHORT_SHA }}
+          tags: ghcr.io/${{ env.LOWERCASE_REPO }}:${{ env.COMMIT_SHORT_SHA }}
           labels: ${{ steps.meta.outputs.labels }}
