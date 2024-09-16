@@ -28,6 +28,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/c0s1nus/aitomaton-priceparser:${{ ${{ github.sha::7 }} }}
+            ghcr.io/c0s1nus/aitomaton-priceparser:${{ github.sha::7 }}
             ghcr.io/c0s1nus/aitomaton-priceparser:latest
             
