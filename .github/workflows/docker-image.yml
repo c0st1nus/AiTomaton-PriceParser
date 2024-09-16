@@ -1,6 +1,6 @@
 name: Docker Image CI for GHCR
 
-on:
+on:  
   push:
     branches:
       - main
@@ -10,20 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Print Commit SHA
-        run: echo "Commit SHA: ${{ github.sha }}"
-      - name: Verify Commit SHA
-        run: |
-          if [ -z "${{ github.sha }}" ]; then
-            echo "Error: Commit SHA is empty"
-            exit 1
-          else
-            echo "Commit SHA is valid: ${{ github.sha }}"
-          fi
-      - name: Build and Push image
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
-          echo $GH_PAT | docker login ghcr.io -u c0s1nus --password-stdin
-          docker build -t ghcr.io/c0s1nus/aitomaton-priceparser:${{ github.sha }} .
-          docker push ghcr.io/c0s1nus/aitomaton-priceparser:${{ github.sha }}
+      - uses: docker/build-push-action@v6.7.0
+      - name: Build and push Docker images
+        with:
+          tags: latest
+          github-token: ${{ GH.PAT }}
+          
