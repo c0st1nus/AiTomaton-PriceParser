@@ -36,16 +36,17 @@ jobs:
         id: lowercase_repo
         run: echo "LOWERCASE_REPO=$(echo ${GITHUB_REPOSITORY} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
-      - name: Build and push Docker image
-        id: push
+      - name: Build and push Docker image with commit SHA
+        id: push_commit
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
           tags: ghcr.io/${{ env.LOWERCASE_REPO }}:${{ env.COMMIT_SHORT_SHA }}
-          labels: ${{ steps.meta.outputs.labels }} 
+          labels: ${{ steps.meta.outputs.labels }}
+
       - name: Build and push Docker image to latest
-        id: push
+        id: push_latest
         uses: docker/build-push-action@v4
         with:
           context: .
