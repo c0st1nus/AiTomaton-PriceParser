@@ -42,6 +42,13 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ env.LOWERCASE_REPO }}:latest
           tags: ghcr.io/${{ env.LOWERCASE_REPO }}:${{ env.COMMIT_SHORT_SHA }}
+          labels: ${{ steps.meta.outputs.labels }} 
+      - name: Build and push Docker image to latest
+        id: push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ env.LOWERCASE_REPO }}:latest
           labels: ${{ steps.meta.outputs.labels }}
