@@ -1,5 +1,10 @@
+
+
 {
     "SKIP": [
+        "meta_llama_2_13b_chat",
+        "meta_llama_2_70b_chat",
+        "meta_llama_2_7b_chat",
         "None",
         "Qwen2_VL_7B_Instruct__free_",
         "Nous__Hermes_3_405B_Instruct__free_",
@@ -41,6 +46,12 @@
         "Rerank_3",
         "Embed_3"
 ],
+    "Granite 8B instruct 128k": [
+        "ibm_granite_granite_8b_code_instruct_128k"
+    ],
+    "Granite 8B instruct 8k": [
+        "ibm_granite_granite_8b_code_instruct_8k"
+    ],
     "AI21 Jamba 1.5 Large": [
         "AI21__Jamba_1_5_Large"
     ],
@@ -217,6 +228,7 @@
         "Fimbulvetr_11B_v2"
     ],
     "Dolphin Llama 3 70B": [
+        "meta_meta_llama_3_70b",
         "Dolphin_Llama_3_70B__"
     ],
     "Dolphin 2.9.2 Mixtral 8x22B": [
@@ -236,6 +248,7 @@
         "DeepSeek_V2_5"
     ],
     "DBRX 132B Instruct": [
+        "DBRX",
         "Databricks__DBRX_132B_Instruct"
     ],
     "Command": [
@@ -259,6 +272,8 @@
         "Xwin_70B"
     ],
     "Mistral 7B instruct": [
+        "mistralai_mistral_7b_instruct_v0_2",
+        "mistralai_mistral_7b_v0_1",
         "mistral_7b_instruct"
     ],
     "Lzlv 70B": [
@@ -331,14 +346,24 @@
     "Phi 3.5 Mini 128K Instruct": [
         "Phi_3_5_Mini_128K_Instruct"
     ],
+    "Llama 2 7B": [    
+        "meta_llama_2_7b"
+    ],
     "Llama 2 13B": [
-        "Meta__Llama_v2_13B_Chat"
+        "Meta__Llama_v2_13B_Chat",
+        "meta_llama_2_13b"
+    ],
+    "Llama 2 70B": [
+        "meta_llama_2_70b"
     ],
     "Llama 3 8B 8K": [
+        "meta_meta_llama_3_8b",
+        "meta_meta_llama_3_8b_instruct",
         "Llama_3_8B_8k"
     ],
     "Llama 3 70B 8K": [
-        "Llama_3_70B_8k"
+        "Llama_3_70B_8k",
+        "meta_meta_llama_3_70b_instruct"
     ],
     "Llama 3 8B instruct nitro": [
         "Meta__Llama_3_8B_Instruct__nitro_"
@@ -397,9 +422,11 @@
         "llama_3_1_70b_instruct"
     ],
     "Llama 3.1 405B base": [
-        "Meta__Llama_3_1_405B__base_"
+        "Meta__Llama_3_1_405B__base_",
+        "Meta_Llama_3_1_405B"
     ],
     "Llama 3.1 405B instruct": [
+        "meta_meta_llama_3_1_405b_instruct",
         "Meta__Llama_3_1_405B_Instruct",
         "llama_3_1_405b_instruct"
     ],
@@ -445,7 +472,8 @@
         "Nous__Hermes_2_Theta_8B"
     ],
     "Hermes 2 Yi 34B": [
-        "Nous__Hermes_2_Yi_34B"
+        "Nous__Hermes_2_Yi_34B",
+        "Yi_Large"
     ],
     "Hermes 3 70B instruct": [
         "Nous__Hermes_3_70B_Instruct"
@@ -486,6 +514,7 @@
         "Mixtral_8x7B__base_"
     ],
     "Mixtral 8x7B instruct": [
+        "mistralai_mixtral_8x7b_instruct_v0_1",
         "Mixtral_8x7B_Instruct"
     ],
     "Mixtral 8x7B instruct 32k": [

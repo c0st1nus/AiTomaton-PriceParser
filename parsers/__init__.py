@@ -9,5 +9,7 @@ from .mircosoft import microsoft
 from .DeepSeek import deepseek
 from .CloudFlare import cloudflare
 from .novita import novita
+from .fireworks import fireworks
+from .replicate import replicate
 
-__all__ = ['novita', 'openrouter', 'groq', 'mistral', 'cohere', 'openAI', 'anthropic', 'google', 'microsoft', 'deepseek', 'cloudflare']
+__all__ = ['fireworks', 'replicate', 'novita', 'openrouter', 'groq', 'mistral', 'cohere', 'openAI', 'anthropic', 'google', 'microsoft', 'deepseek', 'cloudflare']

@@ -24,7 +24,9 @@ def get_data():
         'microsoft': microsoft,
         'deepseek': deepseek,
         'cloudflare': cloudflare,
-        'novita': novita
+        'novita': novita,
+        'fireworks': fireworks,
+        'replicate': replicate
     }
     result = {}
     print("Start of parsing")
@@ -42,10 +44,6 @@ def get_data():
                 log_service_time(service, service_elapsed_time)
             except Exception as e:
                 print(f"Error parsing {service}: {e}")
-
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-    print(f"Parsing completed in {elapsed_time:.2f} seconds")
 
     end_time = time.time()
     elapsed_time = end_time - start_time
@@ -133,3 +131,4 @@ def calculate_average_prices(data):
         "av_output_price": av_output_price
     }
     return average_prices
+get_data()
