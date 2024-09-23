@@ -42,4 +42,4 @@ if __name__ == '__main__':
     t.start()
 
     new_loop.call_soon_threadsafe(new_loop.create_task, call_function())
-    app.run(host="0.0.0.0", port="8080")
+    app.run(port="2020")
