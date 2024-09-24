@@ -6,12 +6,14 @@ from flask import Flask, send_from_directory, abort
 from threading import Thread
 import os
 import handler
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/date/<string:date>')
+@cross_origin()
 def show_date(date):    
     return handler.select_data(date)
 
@@ -20,6 +22,7 @@ def show_log():
     return send_from_directory(os.path.dirname(__file__), 'log.txt')
 
 @app.route('/avg')
+@cross_origin()
 def show_avg():
     return handler.select_avg()
 
