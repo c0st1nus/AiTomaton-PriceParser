@@ -2,7 +2,8 @@ name: Publish Docker image
 
 on:
   push:
-    branch: main
+    branches: 
+      - main
 
 jobs:
   push_to_registries:
@@ -47,10 +48,10 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           
       - name: Build and push Docker image as latest
-          id: latest
-          uses: docker/build-push-action@v4
-          with:
-            context: .
-            push: true
-            tags: ghcr.io/${{ env.LOWERCASE_REPO }}:latest
-            labels: ${{ steps.meta.outputs.labels }}
+        id: latest
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ env.LOWERCASE_REPO }}:latest
+          labels: ${{ steps.meta.outputs.labels }}

@@ -10,7 +10,6 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/date/<string:date>')
 @cross_origin()
