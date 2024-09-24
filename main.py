@@ -9,7 +9,6 @@ import handler
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-CORS(app)
 
 @app.route('/date/<string:date>')
 @cross_origin()
@@ -44,4 +43,4 @@ if __name__ == '__main__':
     t.start()
 
     new_loop.call_soon_threadsafe(new_loop.create_task, call_function())
-    app.run(port="8080")
+    app.run(host="0.0.0.0", port=3006)
