@@ -18,4 +18,4 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckod
 ENV GECKODRIVER_PATH=/usr/local/bin/geckodriver
 ENV FIREFOX_PATH=/usr/bin/firefox
 
-CMD ["python3", "./main.py"]
+CMD ["python", "main.py"]
