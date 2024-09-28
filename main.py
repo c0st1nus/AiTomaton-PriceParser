@@ -19,7 +19,7 @@ def show_date(date):
 def show_log():
     return send_from_directory(os.path.dirname(__file__), 'log.txt')
 
-@app.route('/avg')
+@app.route('/avg/')
 @cross_origin()
 def show_avg():
     return handler.select_avg()
