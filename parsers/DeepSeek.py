@@ -3,7 +3,7 @@ import re
 import time
 import requests
 
-def deepseek(url="https://platform.deepseek.com/api-docs/pricing/"):
+def deepseek(url="https://platform.deepseek.com/api-docs/quick_start/pricing/"):
     start_time = time.time()
     response = requests.get(url)
     html_content = response.content

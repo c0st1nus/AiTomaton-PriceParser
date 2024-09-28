@@ -4,13 +4,15 @@ from selenium.webdriver.firefox.service import Service
 import re
 import os
 import time
+import json
+
+with open("config.json", "r") as config_file:
+    config = json.load(config_file)
 
 def microsoft(url="https://azure.microsoft.com/en-us/pricing/details/phi-3/?cdn=disable"):
     start_time = time.time()
-    geckodriver_path = os.getenv('GECKODRIVER_PATH', '/usr/local/bin/geckodriver')
-    firefox_path = os.getenv('FIREFOX_PATH', '/usr/bin/firefox')
-    # geckodriver_path = "C:\\geckodriver\\geckodriver.exe"
-    # firefox_path = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    geckodriver_path = os.getenv('GECKODRIVER_PATH', config['driver'])
+    firefox_path = os.getenv('FIREFOX_PATH', config['browser'])
     
     service = Service(geckodriver_path)
     options = webdriver.FirefoxOptions()

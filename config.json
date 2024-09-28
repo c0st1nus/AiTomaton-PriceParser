@@ -1,0 +1,4 @@
+{
+    "driver": "C:\\geckodriver\\geckodriver.exe",
+    "browser": "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+}

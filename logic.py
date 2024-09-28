@@ -23,7 +23,6 @@ def get_data():
         'google': google,
         'microsoft': microsoft,
         'deepseek': deepseek,
-        'cloudflare': cloudflare,
         'novita': novita,
         'fireworks': fireworks,
         'replicate': replicate
@@ -38,12 +37,10 @@ def get_data():
         futures = {executor.submit(func): name for name, func in services.items()}
         for future in concurrent.futures.as_completed(futures):
             service = futures[future]
-            try:
-                service_result, service_elapsed_time = future.result()
-                result[service] = service_result
-                log_service_time(service, service_elapsed_time)
-            except Exception as e:
-                print(f"Error parsing {service}: {e}")
+            
+            service_result, service_elapsed_time = future.result()
+            result[service] = service_result
+            log_service_time(service, service_elapsed_time)
 
     end_time = time.time()
     elapsed_time = end_time - start_time

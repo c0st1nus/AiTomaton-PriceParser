@@ -15,7 +15,6 @@ def cohere(url="https://cohere.com/pricing"):
     for model_element in models:
         model_name = model_element.select_one('p.text-3xl').text.strip() if model_element.select_one('p.text-3xl') else None
         
-        # Изменены селекторы для получения цен
         input_price = model_element.select_one('div:nth-of-type(1) p.text-2xl').text.strip().replace('$', '') if model_element.select_one('div:nth-of-type(1) p.text-2xl') else None
         output_price = model_element.select_one('div:nth-of-type(2) p.text-2xl').text.strip().replace('$', '') if model_element.select_one('div:nth-of-type(2) p.text-2xl') else None
 
