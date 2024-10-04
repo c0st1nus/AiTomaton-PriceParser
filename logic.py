@@ -25,7 +25,8 @@ def get_data():
         'deepseek': deepseek,
         'novita': novita,
         'fireworks': fireworks,
-        'replicate': replicate
+        'replicate': replicate,
+        'cloudflare': cloudflare
     }
     result = {}
     print("Start of parsing")
@@ -70,18 +71,19 @@ def consolidate_data(data):
             if real_model_name == 'SKIP':
                 continue
             if real_model_name is None:
+                print(clean_column)
                 continue
             try:
                 if real_model_name not in consolidated_data:
                     consolidated_data[real_model_name] = {}
                 consolidated_data[real_model_name][providers] = {
-                    "input_price": str(round(float(data[providers][model_name]["input_price"]), 2)),
-                    "output_price": str(round(float(data[providers][model_name]["output_price"]), 2))
+                    "input_price": str(round(float(data[providers][model_name]["input_price"]), 4)),
+                    "output_price": str(round(float(data[providers][model_name]["output_price"]), 4))
                 }
             except ValueError:
                 consolidated_data[real_model_name][providers] = {
-                    "input_price": str(round(float(data[providers][model_name]["input_price"].replace(',', '.')), 2)),
-                    "output_price": str(round(float(data[providers][model_name]["output_price"].replace(',', '.')), 2))
+                    "input_price": str(round(float(data[providers][model_name]["input_price"].replace(',', '.')), 4)),
+                    "output_price": str(round(float(data[providers][model_name]["output_price"].replace(',', '.')), 4))
                 }
     return consolidated_data
 

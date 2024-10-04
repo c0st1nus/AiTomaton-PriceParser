@@ -13,7 +13,9 @@ operators = [
     'microsoft',
     'deepseek',
     'cloudflare',
-    'novita'
+    'novita',
+    'fireworks',
+    'replicate'
 ]
 
 connection = pymysql.connect(

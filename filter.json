@@ -1,7 +1,8 @@
-
-
 {
     "SKIP": [
+        "Liquid__LFM_40B_MoE__free_",
+        "Meta__Llama_3_1_70B_Instruct__free_",
+        "Meta__Llama_3_1_405B_Instruct__free_",
         "meta_llama_2_13b_chat",
         "meta_llama_2_70b_chat",
         "meta_llama_2_7b_chat",
@@ -44,8 +45,55 @@
         "OpenAI__GPT_4_32k__older_v0314_",
         "OpenAI__GPT_4__older_v0314_",
         "Rerank_3",
-        "Embed_3"
+        "Embed_3",
+        "Meta__Llama_3_2_3B_Instruct__free_",
+        "Meta__Llama_3_2_1B_Instruct__free_", 
+        "Meta__Llama_3_2_11B_Vision_Instruct__free_"
 ],
+    "Liquid LFM 40B MoE": [
+        "Liquid__LFM_40B_MoE"
+    ],
+    "Any model 0-4B": [
+        "Any_model_0_4B"
+    ],
+    "Any model 4-16B": [
+        "Any_model_4_16B"
+    ],
+    "Any model 16B+": [
+        "Any_model_16B_"
+    ],
+    "MoE 0-56B": [
+        "MoE_0_56B"
+    ],
+    "MoE 56-176B": [
+        "MoE_56_176B"
+    ],
+    "Any model 0-3B": [
+        "Any_model_0_3B"
+    ],
+    "Any model 3-8B": [
+        "Any_model_3_8B"
+    ],
+    "Any model 8-20B": [
+        "Any_model_8_20B"
+    ],
+    "Any model 20-40B": [
+        "Any_model_20_40B"
+    ],
+    "Any model 40B+": [
+        "Any_model_40B",
+        "Any_model_40B_"
+    ],
+    "Mistral Small 24-09": [
+        "Mistral_Small_24_09"
+    ],
+    "Pixtral 12B": [
+        "Pixtral_12B",
+        "Mistral__Pixtral_12B"
+    ],
+    "Granite 20B instruct 8K": [
+        "ibm_granite_granite_20b_code_instruct_8k"
+    ],
     "Granite 8B instruct 128k": [
         "ibm_granite_granite_8b_code_instruct_128k"
     ],
@@ -203,6 +251,8 @@
         "Google__Gemini_Pro_1_0"
     ],
     "Gemini Flash 1.5": [
+        "Google__Gemini_1_5_Flash_8B",
+        "Gemini_1_5_Flash_8B________________________________________________Billing_starts_Oct_14th",
         "Google__Gemini_Flash_1_5",
         "Gemini_1_5_Flash"
     ],
@@ -284,6 +334,9 @@
         "WizardLM_2_7B",
         "wizardlm_2_7b"
     ],
+    "Rocinante 12B": [
+        "Rocinante_12B"
+    ],
     "WizardLM 2 8x22B": [
         "WizardLM_2_8x22B",
         "wizardlm_2_8x22b"
@@ -306,11 +359,25 @@
     "ReMM SLERP 13B extended": [
         "ReMM_SLERP_13B__extended_"
     ],
+    "EVA Qwen 2.5 14B": [
+        "EVA_Qwen2_5_14B"
+    ],
+    "Qwen 2.5 72B instruct": [
+        "Qwen2_5_72B_Instruct"
+    ],
     "Qwen 2 7B instruct": [
-        "Qwen_2_7B_Instruct"
+        "Qwen_2_7B_Instruct",
+        "qwen_2_7b_instruct"
+    ],
+    "Qwen 2 VL 7B Instruct": [
+        "Qwen2_VL_7B_Instruct"
+    ],
+    "Qwen 2 VL 72B Instruct": [
+        "Qwen2_VL_72B_Instruct"
     ],
     "Qwen 2 72B instruct": [
-        "Qwen_2_72B_Instruct"
+        "Qwen_2_72B_Instruct",
+        "qwen_2_72b_instruct"
     ],
     "Qwen 1.5 72B": [
         "Qwen_1_5_72B_Chat"
@@ -343,8 +410,15 @@
         "Phi_3_medium_4k_instruct",
         "Phi_3_Medium_4K_Instruct"
     ],
+    "Phi 3.5 MoE instruct": [
+        "Phi_3_5_MoE_instruct"
+    ],
+    "Phi 3.5 Vision Instruct": [
+        "Phi_3_5_vision_instruct"
+    ],
     "Phi 3.5 Mini 128K Instruct": [
-        "Phi_3_5_Mini_128K_Instruct"
+        "Phi_3_5_Mini_128K_Instruct",
+        "Phi_3_5_mini_instruct"
     ],
     "Llama 2 7B": [    
         "meta_llama_2_7b"
@@ -440,13 +514,26 @@
         "Perplexity__Llama_3_1_Sonar_8B"
     ],
     "Llama 3.1 Euryale 70B v2.2": [
-        "Llama_3_1_Euryale_70B_v2_2"
+        "Llama_3_1_Euryale_70B_v2_2",
+        "l31_70b_euryale_v2_2"
     ],
     "Llama 3.1 Instant 8B 128K": [
         "Llama_3_1_8B_Instant_128k"
     ],
     "Llama 3.1 Versatile 70B 128K": [
         "Llama_3_1_70B_Versatile_128k"
+    ],
+    "Meta Llama 3.2 1B Instruct": [
+        "Meta__Llama_3_2_1B_Instruct"
+    ],
+    "Meta Llama 3.2 3B Instruct": [
+        "Meta__Llama_3_2_3B_Instruct"
+    ],
+    "Meta Llama 3.2 11B Vision Instruct": [
+        "Meta__Llama_3_2_11B_Vision_Instruct"
+    ],
+    "Meta Llama 3.2 90B Vision Instruct": [
+        "Meta__Llama_3_2_90B_Vision_Instruct"
     ],
     "LlamaGuard 2 8B": [
         "Meta__LlamaGuard_2_8B"
@@ -571,6 +658,9 @@
     "Mistral Large 2": [
         "Mistral_Large_2"
     ],
+    "Mistral Nemo": [
+        "Mistral_NeMo"
+    ],
     "Mistral Nemo 12B Starcannon": [
         "Mistral_Nemo_12B_Starcannon"
     ],
@@ -586,5 +676,9 @@
     ],
     "Magnum 72B": [
         "Magnum_72B"
+    ],
+    
+    "Magnum V2 72B": [
+        "Magnum_v2_72B"
     ]
 }
