@@ -76,6 +76,7 @@ def google(url="https://ai.google.dev/pricing/"):
                                 output_price = price
             
             if model_name and input_price and output_price:
+                model_name = model_name[:19] if len(model_name) > 19 else model_name
                 models[model_name] = {
                     'input_price': input_price,
                     'output_price': output_price

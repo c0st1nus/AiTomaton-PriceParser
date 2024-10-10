@@ -9,7 +9,6 @@ def cloudflare(url="https://developers.cloudflare.com/workers-ai/platform/pricin
     
     soup = BeautifulSoup(response.content, 'html.parser')
     
-    # Используем указанный XPath для нахождения таблицы
     table = soup.select_one('body > div > div > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(1) > table:nth-of-type(1)')
     
     data = {

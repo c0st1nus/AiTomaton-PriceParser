@@ -1,0 +1,1499 @@
+{
+    "Gemini Flash 1.5": {
+        "openrouter": {
+            "input_price": "0.075",
+            "output_price": "0.3"
+        },
+        "google": {
+            "input_price": "0.15",
+            "output_price": "0.6"
+        },
+        "LLMArena": {
+            "value": "1205"
+        }
+    },
+    "Liquid LFM 40B MoE": {
+        "openrouter": {
+            "input_price": "0.0",
+            "output_price": "0.0"
+        }
+    },
+    "Rocinante 12B": {
+        "openrouter": {
+            "input_price": "0.25",
+            "output_price": "0.5"
+        }
+    },
+    "EVA Qwen 2.5 14B": {
+        "openrouter": {
+            "input_price": "0.25",
+            "output_price": "0.5"
+        }
+    },
+    "Magnum V2 72B": {
+        "openrouter": {
+            "input_price": "3.75",
+            "output_price": "4.5"
+        }
+    },
+    "Meta Llama 3.2 3B Instruct": {
+        "openrouter": {
+            "input_price": "0.03",
+            "output_price": "0.05"
+        },
+        "LLMArena": {
+            "value": "1102"
+        }
+    },
+    "Meta Llama 3.2 1B Instruct": {
+        "openrouter": {
+            "input_price": "0.01",
+            "output_price": "0.02"
+        },
+        "LLMArena": {
+            "value": "1054"
+        }
+    },
+    "Meta Llama 3.2 90B Vision Instruct": {
+        "openrouter": {
+            "input_price": "0.35",
+            "output_price": "0.4"
+        }
+    },
+    "Meta Llama 3.2 11B Vision Instruct": {
+        "openrouter": {
+            "input_price": "0.055",
+            "output_price": "0.055"
+        }
+    },
+    "Qwen 2.5 72B instruct": {
+        "openrouter": {
+            "input_price": "0.35",
+            "output_price": "0.4"
+        },
+        "LLMArena": {
+            "value": "1257"
+        }
+    },
+    "Qwen 2 VL 72B Instruct": {
+        "openrouter": {
+            "input_price": "0.4",
+            "output_price": "0.4"
+        }
+    },
+    "Llama 3 Lumimaid 8B": {
+        "openrouter": {
+            "input_price": "0.1875",
+            "output_price": "1.125"
+        }
+    },
+    "o1 mini": {
+        "openrouter": {
+            "input_price": "3.0",
+            "output_price": "12.0"
+        },
+        "LLMArena": {
+            "value": "1314"
+        }
+    },
+    "o1 prewiev": {
+        "openrouter": {
+            "input_price": "15.0",
+            "output_price": "60.0"
+        },
+        "LLMArena": {
+            "value": "1335"
+        }
+    },
+    "Pixtral 12B": {
+        "openrouter": {
+            "input_price": "0.1",
+            "output_price": "0.1"
+        },
+        "mistral": {
+            "input_price": "0.15",
+            "output_price": "0.15"
+        }
+    },
+    "Qwen 2 VL 7B Instruct": {
+        "openrouter": {
+            "input_price": "0.1",
+            "output_price": "0.1"
+        }
+    },
+    "Llama 3.1 Euryale 70B v2.2": {
+        "openrouter": {
+            "input_price": "0.35",
+            "output_price": "0.4"
+        },
+        "novita": {
+            "input_price": "1.48",
+            "output_price": "1.48"
+        }
+    },
+    "AI21 Jamba 1.5 Large": {
+        "openrouter": {
+            "input_price": "2.0",
+            "output_price": "8.0"
+        },
+        "LLMArena": {
+            "value": "1221"
+        }
+    },
+    "AI21 Jamba 1.5 Mini": {
+        "openrouter": {
+            "input_price": "0.2",
+            "output_price": "0.4"
+        },
+        "LLMArena": {
+            "value": "1176"
+        }
+    },
+    "Phi 3.5 Mini 128K Instruct": {
+        "openrouter": {
+            "input_price": "0.1",
+            "output_price": "0.1"
+        },
+        "microsoft": {
+            "input_price": "0.0001",
+            "output_price": "0.0005"
+        }
+    },
+    "Hermes 3 70B instruct": {
+        "openrouter": {
+            "input_price": "0.4",
+            "output_price": "0.4"
+        }
+    },
+    "Hermes 3 405B instruct": {
+        "openrouter": {
+            "input_price": "4.5",
+            "output_price": "4.5"
+        }
+    },
+    "Hermes 3 405B instruct extended": {
+        "openrouter": {
+            "input_price": "4.5",
+            "output_price": "4.5"
+        }
+    },
+    "Llama 3.1 Sonar 405B": {
+        "openrouter": {
+            "input_price": "5.0",
+            "output_price": "5.0"
+        }
+    },
+    "GPT-4o": {
+        "openrouter": {
+            "input_price": "2.5",
+            "output_price": "10.0"
+        },
+        "MMLU": {
+            "value": "88.7%"
+        },
+        "LLMArena": {
+            "value": "1338"
+        },
+        "openAI": {
+            "input_price": "2.5",
+            "output_price": "1.25"
+        }
+    },
+    "Llama 3 Lunaris 8B": {
+        "openrouter": {
+            "input_price": "2.0",
+            "output_price": "2.0"
+        }
+    },
+    "Mistral Nemo 12B Starcannon": {
+        "openrouter": {
+            "input_price": "2.0",
+            "output_price": "2.0"
+        }
+    },
+    "GPT-4o (2024-08-06)": {
+        "openrouter": {
+            "input_price": "2.5",
+            "output_price": "10.0"
+        },
+        "LLMArena": {
+            "value": "1264"
+        },
+        "openAI": {
+            "input_price": "2.5",
+            "output_price": "1.25"
+        }
+    },
+    "Llama 3.1 405B base": {
+        "openrouter": {
+            "input_price": "2.0",
+            "output_price": "2.0"
+        },
+        "fireworks": {
+            "input_price": "3.0",
+            "output_price": "3.0"
+        }
+    },
+    "Mistral Nemo 12B Celeste": {
+        "openrouter": {
+            "input_price": "1.5",
+            "output_price": "1.5"
+        }
+    },
+    "Llama 3.1 Sonar 70B": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "1.0"
+        }
+    },
+    "Llama 3.1 Sonar 8B": {
+        "openrouter": {
+            "input_price": "0.2",
+            "output_price": "0.2"
+        }
+    },
+    "Llama 3.1 70B": {
+        "openrouter": {
+            "input_price": "0.3",
+            "output_price": "0.3"
+        },
+        "novita": {
+            "input_price": "0.51",
+            "output_price": "0.74"
+        },
+        "LLMArena": {
+            "value": "1248"
+        }
+    },
+    "Llama 3.1 8B": {
+        "openrouter": {
+            "input_price": "0.055",
+            "output_price": "0.055"
+        },
+        "novita": {
+            "input_price": "0.065",
+            "output_price": "0.065"
+        },
+        "LLMArena": {
+            "value": "1172"
+        }
+    },
+    "Llama 3.1 405B instruct": {
+        "openrouter": {
+            "input_price": "1.79",
+            "output_price": "1.79"
+        },
+        "novita": {
+            "input_price": "2.75",
+            "output_price": "2.75"
+        },
+        "replicate": {
+            "input_price": "9.5",
+            "output_price": "9.5"
+        },
+        "LLMArena": {
+            "value": "1266"
+        }
+    },
+    "Mistral Codestral Mamba": {
+        "openrouter": {
+            "input_price": "0.25",
+            "output_price": "0.25"
+        }
+    },
+    "Mistal Nemo": {
+        "openrouter": {
+            "input_price": "0.13",
+            "output_price": "0.13"
+        },
+        "novita": {
+            "input_price": "0.17",
+            "output_price": "0.17"
+        }
+    },
+    "GPT-4o mini (2024-07-18)": {
+        "openrouter": {
+            "input_price": "0.15",
+            "output_price": "0.6"
+        },
+        "LLMArena": {
+            "value": "1273"
+        }
+    },
+    "GPT-4o mini": {
+        "openrouter": {
+            "input_price": "0.15",
+            "output_price": "0.6"
+        }
+    },
+    "Qwen 2 7B instruct": {
+        "openrouter": {
+            "input_price": "0.054",
+            "output_price": "0.054"
+        },
+        "novita": {
+            "input_price": "0.054",
+            "output_price": "0.054"
+        }
+    },
+    "Gemma 2 27B": {
+        "openrouter": {
+            "input_price": "0.27",
+            "output_price": "0.27"
+        },
+        "LLMArena": {
+            "value": "1218"
+        }
+    },
+    "Magnum 72B": {
+        "openrouter": {
+            "input_price": "3.75",
+            "output_price": "4.5"
+        }
+    },
+    "Hermes 2 Theta 8B": {
+        "openrouter": {
+            "input_price": "0.1875",
+            "output_price": "1.125"
+        }
+    },
+    "Gemma 2 9B": {
+        "openrouter": {
+            "input_price": "0.06",
+            "output_price": "0.06"
+        },
+        "novita": {
+            "input_price": "0.08",
+            "output_price": "0.08"
+        },
+        "LLMArena": {
+            "value": "990"
+        }
+    },
+    "AI21 Jamba Instruct": {
+        "openrouter": {
+            "input_price": "0.5",
+            "output_price": "0.7"
+        }
+    },
+    "Claude 3.5 sonnet": {
+        "openrouter": {
+            "input_price": "3.0",
+            "output_price": "15.0"
+        },
+        "MMLU": {
+            "value": "88.7%"
+        },
+        "LLMArena": {
+            "value": "1268"
+        },
+        "anthropic": {
+            "input_price": "3.0",
+            "output_price": "15.0"
+        }
+    },
+    "Llama 3 Euryale 70B v2.1": {
+        "openrouter": {
+            "input_price": "0.35",
+            "output_price": "0.4"
+        },
+        "novita": {
+            "input_price": "1.48",
+            "output_price": "1.48"
+        }
+    },
+    "Dolphin 2.9.2 Mixtral 8x22B": {
+        "openrouter": {
+            "input_price": "0.9",
+            "output_price": "0.9"
+        },
+        "novita": {
+            "input_price": "0.9",
+            "output_price": "0.9"
+        }
+    },
+    "Qwen 2 72B instruct": {
+        "openrouter": {
+            "input_price": "0.34",
+            "output_price": "0.39"
+        },
+        "novita": {
+            "input_price": "0.34",
+            "output_price": "0.39"
+        },
+        "LLMArena": {
+            "value": "1187"
+        }
+    },
+    "Research Hermes 2 Pro Llama 3 8B": {
+        "openrouter": {
+            "input_price": "0.14",
+            "output_price": "0.14"
+        }
+    },
+    "Mistral 7B Instruct v0.3": {
+        "openrouter": {
+            "input_price": "0.055",
+            "output_price": "0.055"
+        }
+    },
+    "Mistral 7B Instruct": {
+        "openrouter": {
+            "input_price": "0.055",
+            "output_price": "0.055"
+        }
+    },
+    "Mistral 7B Instruct nitro": {
+        "openrouter": {
+            "input_price": "0.07",
+            "output_price": "0.07"
+        }
+    },
+    "Phi 3 Mini 128K Instruct": {
+        "openrouter": {
+            "input_price": "0.1",
+            "output_price": "0.1"
+        },
+        "LLMArena": {
+            "value": "1037"
+        },
+        "microsoft": {
+            "input_price": "0.8",
+            "output_price": "0.0001"
+        }
+    },
+    "Phi 3 Medium 128K Instruct": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "1.0"
+        },
+        "microsoft": {
+            "input_price": "0.8",
+            "output_price": "0.0002"
+        }
+    },
+    "Llama 3 Lumimaid 70B": {
+        "openrouter": {
+            "input_price": "3.375",
+            "output_price": "4.5"
+        }
+    },
+    "DeepSeek-Chat": {
+        "openrouter": {
+            "input_price": "0.14",
+            "output_price": "0.28"
+        },
+        "deepseek": {
+            "input_price": "0.14",
+            "output_price": "0.28"
+        },
+        "LLMArena": {
+            "value": "1077"
+        }
+    },
+    "Llama 3 Sonar 70B": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "1.0"
+        }
+    },
+    "Llama 3 Sonar 8B": {
+        "openrouter": {
+            "input_price": "0.2",
+            "output_price": "0.2"
+        }
+    },
+    "LlamaGuard 2 8B": {
+        "openrouter": {
+            "input_price": "0.18",
+            "output_price": "0.18"
+        }
+    },
+    "GPT-4o (2024-05-13)": {
+        "openrouter": {
+            "input_price": "5.0",
+            "output_price": "15.0"
+        },
+        "LLMArena": {
+            "value": "1285"
+        },
+        "openAI": {
+            "input_price": "5.0",
+            "output_price": "2.5"
+        }
+    },
+    "GPT-4o (extended)": {
+        "openrouter": {
+            "input_price": "6.0",
+            "output_price": "18.0"
+        }
+    },
+    "Qwen 1.5 72B": {
+        "openrouter": {
+            "input_price": "0.81",
+            "output_price": "0.81"
+        },
+        "LLMArena": {
+            "value": "1147"
+        }
+    },
+    "Qwen 1.5 110B": {
+        "openrouter": {
+            "input_price": "1.62",
+            "output_price": "1.62"
+        },
+        "LLMArena": {
+            "value": "1162"
+        }
+    },
+    "Llama 3 Lumimaid 8B extended": {
+        "openrouter": {
+            "input_price": "0.1875",
+            "output_price": "1.125"
+        }
+    },
+    "Fimbulvetr 11B v2": {
+        "openrouter": {
+            "input_price": "0.375",
+            "output_price": "1.5"
+        }
+    },
+    "Llama 3 70B instruct": {
+        "openrouter": {
+            "input_price": "0.35",
+            "output_price": "0.4"
+        },
+        "novita": {
+            "input_price": "0.51",
+            "output_price": "0.74"
+        },
+        "LLMArena": {
+            "value": "1206"
+        }
+    },
+    "Llama 3 70B instruct nitro": {
+        "openrouter": {
+            "input_price": "0.792",
+            "output_price": "0.792"
+        }
+    },
+    "Llama 3 8B instruct": {
+        "openrouter": {
+            "input_price": "0.055",
+            "output_price": "0.055"
+        },
+        "novita": {
+            "input_price": "0.063",
+            "output_price": "0.063"
+        },
+        "LLMArena": {
+            "value": "1152"
+        }
+    },
+    "Llama 3 8B instruct nitro": {
+        "openrouter": {
+            "input_price": "0.162",
+            "output_price": "0.162"
+        }
+    },
+    "Llama 3 8B instruct extended": {
+        "openrouter": {
+            "input_price": "0.1875",
+            "output_price": "1.125"
+        }
+    },
+    "Mixtral 8x22B instruct": {
+        "openrouter": {
+            "input_price": "0.9",
+            "output_price": "0.9"
+        },
+        "LLMArena": {
+            "value": "1148"
+        }
+    },
+    "WizardLM 2 7B": {
+        "openrouter": {
+            "input_price": "0.055",
+            "output_price": "0.055"
+        },
+        "novita": {
+            "input_price": "0.06",
+            "output_price": "0.06"
+        },
+        "LLMArena": {
+            "value": "1059"
+        }
+    },
+    "WizardLM 2 8x22B": {
+        "openrouter": {
+            "input_price": "0.5",
+            "output_price": "0.5"
+        },
+        "novita": {
+            "input_price": "0.62",
+            "output_price": "0.62"
+        }
+    },
+    "Gemini Pro 1.5": {
+        "openrouter": {
+            "input_price": "1.25",
+            "output_price": "5.0"
+        },
+        "google": {
+            "input_price": "2.5",
+            "output_price": "10.0"
+        },
+        "LLMArena": {
+            "value": "1111"
+        }
+    },
+    "GPT-4 (turbo)": {
+        "openrouter": {
+            "input_price": "10.0",
+            "output_price": "30.0"
+        },
+        "LLMArena": {
+            "value": "1256"
+        }
+    },
+    "Command R+": {
+        "openrouter": {
+            "input_price": "2.85",
+            "output_price": "14.25"
+        },
+        "LLMArena": {
+            "value": "1210"
+        }
+    },
+    "DBRX 132B Instruct": {
+        "openrouter": {
+            "input_price": "1.08",
+            "output_price": "1.08"
+        },
+        "MMLU": {
+            "value": "73.7%"
+        }
+    },
+    "Midnight Rose 70B": {
+        "openrouter": {
+            "input_price": "0.8",
+            "output_price": "0.8"
+        },
+        "novita": {
+            "input_price": "0.8",
+            "output_price": "0.8"
+        }
+    },
+    "Command R": {
+        "openrouter": {
+            "input_price": "0.475",
+            "output_price": "1.425"
+        },
+        "LLMArena": {
+            "value": "1149"
+        }
+    },
+    "Command": {
+        "openrouter": {
+            "input_price": "0.95",
+            "output_price": "1.9"
+        }
+    },
+    "Claude 3 haiku": {
+        "openrouter": {
+            "input_price": "0.25",
+            "output_price": "1.25"
+        },
+        "MMLU": {
+            "value": "75.2%"
+        },
+        "LLMArena": {
+            "value": "1179"
+        },
+        "anthropic": {
+            "input_price": "0.25",
+            "output_price": "1.25"
+        }
+    },
+    "Claude 3 sonnet": {
+        "openrouter": {
+            "input_price": "3.0",
+            "output_price": "15.0"
+        },
+        "MMLU": {
+            "value": "81.5%"
+        },
+        "LLMArena": {
+            "value": "1201"
+        },
+        "anthropic": {
+            "input_price": "3.0",
+            "output_price": "15.0"
+        }
+    },
+    "Claude 3 opus": {
+        "openrouter": {
+            "input_price": "15.0",
+            "output_price": "75.0"
+        },
+        "MMLU": {
+            "value": "86.8%"
+        },
+        "LLMArena": {
+            "value": "1248"
+        },
+        "anthropic": {
+            "input_price": "15.0",
+            "output_price": "75.0"
+        }
+    },
+    "Mistral Large": {
+        "openrouter": {
+            "input_price": "2.0",
+            "output_price": "6.0"
+        },
+        "LLMArena": {
+            "value": "1157"
+        }
+    },
+    "GPT-4 (turbo) preview": {
+        "openrouter": {
+            "input_price": "10.0",
+            "output_price": "30.0"
+        },
+        "LLMArena": {
+            "value": "1245"
+        }
+    },
+    "GPT-3.5 (turbo) older v0613": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "2.0"
+        },
+        "LLMArena": {
+            "value": "1117"
+        }
+    },
+    "Hermes 2 Mixtral 8x7B DPO": {
+        "openrouter": {
+            "input_price": "0.54",
+            "output_price": "0.54"
+        },
+        "LLMArena": {
+            "value": "1084"
+        }
+    },
+    "Mistral Medium": {
+        "openrouter": {
+            "input_price": "2.75",
+            "output_price": "8.1"
+        },
+        "LLMArena": {
+            "value": "1148"
+        }
+    },
+    "Mistral Small": {
+        "openrouter": {
+            "input_price": "0.2",
+            "output_price": "0.6"
+        },
+        "mistral": {
+            "input_price": "0.2",
+            "output_price": "0.6"
+        }
+    },
+    "Mistral Tiny": {
+        "openrouter": {
+            "input_price": "0.25",
+            "output_price": "0.25"
+        }
+    },
+    "Hermes 2 Yi 34B": {
+        "openrouter": {
+            "input_price": "0.72",
+            "output_price": "0.72"
+        },
+        "fireworks": {
+            "input_price": "3.0",
+            "output_price": "3.0"
+        },
+        "LLMArena": {
+            "value": "1111"
+        }
+    },
+    "Mistral 7B Instruct v0.2": {
+        "openrouter": {
+            "input_price": "0.18",
+            "output_price": "0.18"
+        }
+    },
+    "Dolphin 2.6 Mixtral 8x7B": {
+        "openrouter": {
+            "input_price": "0.5",
+            "output_price": "0.5"
+        },
+        "LLMArena": {
+            "value": "1063"
+        }
+    },
+    "Gemini Pro 1.0": {
+        "openrouter": {
+            "input_price": "0.5",
+            "output_price": "1.5"
+        },
+        "google": {
+            "input_price": "0.5",
+            "output_price": "1.5"
+        },
+        "LLMArena": {
+            "value": "1132"
+        }
+    },
+    "Gemini Pro 1.5 Vision 1.0": {
+        "openrouter": {
+            "input_price": "0.5",
+            "output_price": "1.5"
+        }
+    },
+    "Mixtral 8x7B instruct": {
+        "openrouter": {
+            "input_price": "0.24",
+            "output_price": "0.24"
+        },
+        "replicate": {
+            "input_price": "0.3",
+            "output_price": "1.0"
+        },
+        "MMLU": {
+            "value": "20.0%"
+        },
+        "LLMArena": {
+            "value": "1114"
+        }
+    },
+    "Mixtral 8x7B instruct nitro": {
+        "openrouter": {
+            "input_price": "0.54",
+            "output_price": "0.54"
+        }
+    },
+    "Mixtral 8x7B base": {
+        "openrouter": {
+            "input_price": "0.54",
+            "output_price": "0.54"
+        }
+    },
+    "MythoMist 7B": {
+        "openrouter": {
+            "input_price": "0.375",
+            "output_price": "0.375"
+        }
+    },
+    "OpenChat 3.5 7B": {
+        "openrouter": {
+            "input_price": "0.055",
+            "output_price": "0.055"
+        },
+        "novita": {
+            "input_price": "0.06",
+            "output_price": "0.06"
+        },
+        "LLMArena": {
+            "value": "1076"
+        }
+    },
+    "Noromaid 20B": {
+        "openrouter": {
+            "input_price": "1.5",
+            "output_price": "2.25"
+        }
+    },
+    "Claude 1.1 instant": {
+        "openrouter": {
+            "input_price": "0.8",
+            "output_price": "2.4"
+        },
+        "MMLU": {
+            "value": "73.4%"
+        }
+    },
+    "Claude 2.1": {
+        "openrouter": {
+            "input_price": "8.0",
+            "output_price": "24.0"
+        },
+        "LLMArena": {
+            "value": "1118"
+        },
+        "anthropic": {
+            "input_price": "8.0",
+            "output_price": "24.0"
+        }
+    },
+    "Claude 2": {
+        "openrouter": {
+            "input_price": "8.0",
+            "output_price": "24.0"
+        },
+        "MMLU": {
+            "value": "78.5%"
+        }
+    },
+    "OpenHeremes 2 5 Mistral 7B": {
+        "openrouter": {
+            "input_price": "0.17",
+            "output_price": "0.17"
+        },
+        "novita": {
+            "input_price": "0.17",
+            "output_price": "0.17"
+        },
+        "LLMArena": {
+            "value": "1075"
+        }
+    },
+    "GPT-4 Vision": {
+        "openrouter": {
+            "input_price": "10.0",
+            "output_price": "30.0"
+        }
+    },
+    "Lzlv 70B": {
+        "openrouter": {
+            "input_price": "0.35",
+            "output_price": "0.4"
+        },
+        "novita": {
+            "input_price": "0.58",
+            "output_price": "0.78"
+        }
+    },
+    "Goliath 120B": {
+        "openrouter": {
+            "input_price": "9.375",
+            "output_price": "9.375"
+        }
+    },
+    "Toppy M 7B": {
+        "openrouter": {
+            "input_price": "0.07",
+            "output_price": "0.07"
+        }
+    },
+    "Toppy M 7B nitro": {
+        "openrouter": {
+            "input_price": "0.07",
+            "output_price": "0.07"
+        }
+    },
+    "GPT-4 (turbo) older v1106": {
+        "openrouter": {
+            "input_price": "10.0",
+            "output_price": "30.0"
+        }
+    },
+    "GPT-3.5 (turbo) 16k older v1106": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "2.0"
+        },
+        "LLMArena": {
+            "value": "1068"
+        }
+    },
+    "Palm 2 Code 32K": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "2.0"
+        }
+    },
+    "Palm 2 Chat 32K": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "2.0"
+        }
+    },
+    "Airoboros 70B": {
+        "openrouter": {
+            "input_price": "0.5",
+            "output_price": "0.5"
+        },
+        "novita": {
+            "input_price": "0.5",
+            "output_price": "0.5"
+        }
+    },
+    "Xwin 70B": {
+        "openrouter": {
+            "input_price": "3.75",
+            "output_price": "3.75"
+        }
+    },
+    "Mistral 7B Instruct v0.1": {
+        "openrouter": {
+            "input_price": "0.18",
+            "output_price": "0.18"
+        }
+    },
+    "GPT-3.5 (turbo) instruct": {
+        "openrouter": {
+            "input_price": "1.5",
+            "output_price": "2.0"
+        }
+    },
+    "Methalion 13B": {
+        "openrouter": {
+            "input_price": "1.125",
+            "output_price": "1.125"
+        }
+    },
+    "GPT-4 32K": {
+        "openrouter": {
+            "input_price": "60.0",
+            "output_price": "120.0"
+        }
+    },
+    "GPT-3.5 (turbo) 16k": {
+        "openrouter": {
+            "input_price": "0.5",
+            "output_price": "1.5"
+        }
+    },
+    "Hermes 13B": {
+        "openrouter": {
+            "input_price": "0.17",
+            "output_price": "0.17"
+        },
+        "novita": {
+            "input_price": "0.17",
+            "output_price": "0.17"
+        }
+    },
+    "Mancer Weaver Alpha": {
+        "openrouter": {
+            "input_price": "1.875",
+            "output_price": "2.25"
+        }
+    },
+    "Claude 1.0 instant": {
+        "openrouter": {
+            "input_price": "0.8",
+            "output_price": "2.4"
+        },
+        "LLMArena": {
+            "value": "1111"
+        }
+    },
+    "Claude 1.2": {
+        "openrouter": {
+            "input_price": "8.0",
+            "output_price": "24.0"
+        }
+    },
+    "Claude 1": {
+        "openrouter": {
+            "input_price": "0.8",
+            "output_price": "2.4"
+        },
+        "LLMArena": {
+            "value": "1149"
+        }
+    },
+    "Claude 2.0": {
+        "openrouter": {
+            "input_price": "8.0",
+            "output_price": "24.0"
+        },
+        "LLMArena": {
+            "value": "1132"
+        },
+        "anthropic": {
+            "input_price": "8.0",
+            "output_price": "24.0"
+        }
+    },
+    "ReMM SLERP 13B": {
+        "openrouter": {
+            "input_price": "1.125",
+            "output_price": "1.125"
+        }
+    },
+    "ReMM SLERP 13B extended": {
+        "openrouter": {
+            "input_price": "1.125",
+            "output_price": "1.125"
+        }
+    },
+    "Palm 2 Code": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "2.0"
+        },
+        "MMLU": {
+            "value": "69.3%"
+        }
+    },
+    "Palm 2 Chat": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "2.0"
+        },
+        "LLMArena": {
+            "value": "1004"
+        }
+    },
+    "MythoMax 13B": {
+        "openrouter": {
+            "input_price": "0.1",
+            "output_price": "0.1"
+        },
+        "novita": {
+            "input_price": "0.119",
+            "output_price": "0.119"
+        }
+    },
+    "MythoMax 13B nitro": {
+        "openrouter": {
+            "input_price": "0.2",
+            "output_price": "0.2"
+        }
+    },
+    "MythoMax 13B extended": {
+        "openrouter": {
+            "input_price": "1.125",
+            "output_price": "1.125"
+        }
+    },
+    "Llama 2 13B": {
+        "openrouter": {
+            "input_price": "0.198",
+            "output_price": "0.198"
+        },
+        "replicate": {
+            "input_price": "0.1",
+            "output_price": "0.5"
+        },
+        "LLMArena": {
+            "value": "799"
+        }
+    },
+    "GPT-4": {
+        "openrouter": {
+            "input_price": "30.0",
+            "output_price": "60.0"
+        },
+        "LLMArena": {
+            "value": "1163"
+        }
+    },
+    "GPT-3.5 (turbo) older v0301": {
+        "openrouter": {
+            "input_price": "1.0",
+            "output_price": "2.0"
+        },
+        "LLMArena": {
+            "value": "1107"
+        }
+    },
+    "GPT-3.5 (turbo)": {
+        "openrouter": {
+            "input_price": "0.5",
+            "output_price": "1.5"
+        },
+        "MMLU": {
+            "value": "70.0%"
+        }
+    },
+    "Mistral Large 2": {
+        "mistral": {
+            "input_price": "2.0",
+            "output_price": "6.0"
+        },
+        "LLMArena": {
+            "value": "1251"
+        }
+    },
+    "Mistral Small 24-09": {
+        "mistral": {
+            "input_price": "0.2",
+            "output_price": "0.6"
+        }
+    },
+    "Codestral": {
+        "mistral": {
+            "input_price": "0.2",
+            "output_price": "0.6"
+        }
+    },
+    "Mistral Nemo": {
+        "mistral": {
+            "input_price": "0.15",
+            "output_price": "0.15"
+        }
+    },
+    "Mistral 7B": {
+        "mistral": {
+            "input_price": "0.25",
+            "output_price": "0.25"
+        }
+    },
+    "Mixtral 8x7B": {
+        "mistral": {
+            "input_price": "0.7",
+            "output_price": "0.7"
+        }
+    },
+    "Mixtral 8x22B": {
+        "mistral": {
+            "input_price": "2.0",
+            "output_price": "6.0"
+        }
+    },
+    "Any model 0-3B": {
+        "cloudflare": {
+            "input_price": "0.1",
+            "output_price": "0.1"
+        }
+    },
+    "Any model 3-8B": {
+        "cloudflare": {
+            "input_price": "0.15",
+            "output_price": "0.15"
+        }
+    },
+    "Any model 8-20B": {
+        "cloudflare": {
+            "input_price": "0.2",
+            "output_price": "0.2"
+        }
+    },
+    "Any model 20-40B": {
+        "cloudflare": {
+            "input_price": "0.5",
+            "output_price": "0.5"
+        }
+    },
+    "Any model 40B+": {
+        "cloudflare": {
+            "input_price": "0.75",
+            "output_price": "0.75"
+        }
+    },
+    "Mistral 7B instruct": {
+        "novita": {
+            "input_price": "0.059",
+            "output_price": "0.059"
+        },
+        "replicate": {
+            "input_price": "0.05",
+            "output_price": "0.25"
+        },
+        "LLMArena": {
+            "value": "1008"
+        }
+    },
+    "Hermes 2 Pro Llama 3 8B": {
+        "novita": {
+            "input_price": "0.14",
+            "output_price": "0.14"
+        }
+    },
+    "Granite 20B instruct 8K": {
+        "replicate": {
+            "input_price": "0.1",
+            "output_price": "0.5"
+        }
+    },
+    "Granite 8B instruct 128k": {
+        "replicate": {
+            "input_price": "0.05",
+            "output_price": "0.25"
+        }
+    },
+    "Llama 2 70B": {
+        "replicate": {
+            "input_price": "0.65",
+            "output_price": "2.75"
+        },
+        "LLMArena": {
+            "value": "1093"
+        }
+    },
+    "Llama 2 7B": {
+        "replicate": {
+            "input_price": "0.05",
+            "output_price": "0.25"
+        },
+        "LLMArena": {
+            "value": "1037"
+        }
+    },
+    "Dolphin Llama 3 70B": {
+        "replicate": {
+            "input_price": "0.65",
+            "output_price": "2.75"
+        }
+    },
+    "Llama 3 70B 8K": {
+        "replicate": {
+            "input_price": "0.65",
+            "output_price": "2.75"
+        },
+        "groq": {
+            "input_price": "0.59",
+            "output_price": "0.79"
+        }
+    },
+    "Llama 3 8B 8K": {
+        "replicate": {
+            "input_price": "0.05",
+            "output_price": "0.25"
+        },
+        "groq": {
+            "input_price": "0.05",
+            "output_price": "0.08"
+        }
+    },
+    "Any model 0-4B": {
+        "fireworks": {
+            "input_price": "0.1",
+            "output_price": "0.1"
+        }
+    },
+    "Any model 4-16B": {
+        "fireworks": {
+            "input_price": "0.2",
+            "output_price": "0.2"
+        }
+    },
+    "Any model 16B+": {
+        "fireworks": {
+            "input_price": "0.9",
+            "output_price": "0.9"
+        }
+    },
+    "MoE 0-56B": {
+        "fireworks": {
+            "input_price": "0.5",
+            "output_price": "0.5"
+        }
+    },
+    "MoE 56-176B": {
+        "fireworks": {
+            "input_price": "1.2",
+            "output_price": "1.2"
+        }
+    },
+    "DeepSeek-Coder": {
+        "LLMArena": {
+            "value": "1178"
+        }
+    },
+    "Phi 3 Medium 4K Instruct": {
+        "LLMArena": {
+            "value": "1123"
+        },
+        "microsoft": {
+            "input_price": "0.8",
+            "output_price": "0.0002"
+        }
+    },
+    "Phi 3 Small 8K Instruct": {
+        "LLMArena": {
+            "value": "1102"
+        },
+        "microsoft": {
+            "input_price": "0.0001",
+            "output_price": "0.0006"
+        }
+    },
+    "Phi 3 Mini 4K Instruct": {
+        "LLMArena": {
+            "value": "1066"
+        },
+        "microsoft": {
+            "input_price": "0.8",
+            "output_price": "0.0001"
+        }
+    },
+    "Gemma 7B 8K instruct": {
+        "LLMArena": {
+            "value": "1038"
+        },
+        "groq": {
+            "input_price": "0.07",
+            "output_price": "0.07"
+        }
+    },
+    "StripedHyena Nous 7B": {
+        "LLMArena": {
+            "value": "1018"
+        }
+    },
+    "Llama 3.1 Versatile 70B 128K": {
+        "groq": {
+            "input_price": "0.59",
+            "output_price": "0.79"
+        }
+    },
+    "Llama 3.1 Instant 8B 128K": {
+        "groq": {
+            "input_price": "0.05",
+            "output_price": "0.08"
+        }
+    },
+    "Mixtral 8x7B instruct 32k": {
+        "groq": {
+            "input_price": "0.24",
+            "output_price": "0.24"
+        }
+    },
+    "Gemma 2 9B 8K": {
+        "groq": {
+            "input_price": "0.2",
+            "output_price": "0.2"
+        }
+    },
+    "Llama 3 Groq 70B 8K": {
+        "groq": {
+            "input_price": "0.89",
+            "output_price": "0.89"
+        }
+    },
+    "Llama 3 Groq 8B 8K": {
+        "groq": {
+            "input_price": "0.19",
+            "output_price": "0.19"
+        }
+    },
+    "LlamaGuard 3 8B 8K": {
+        "groq": {
+            "input_price": "0.2",
+            "output_price": "0.2"
+        }
+    },
+    "Claude instant": {
+        "anthropic": {
+            "input_price": "0.8",
+            "output_price": "2.4"
+        }
+    },
+    "Phi 3 Small 128K Instruct": {
+        "microsoft": {
+            "input_price": "0.0001",
+            "output_price": "0.0006"
+        }
+    },
+    "Phi 3.5 MoE instruct": {
+        "microsoft": {
+            "input_price": "0.0002",
+            "output_price": "0.0006"
+        }
+    },
+    "Phi 3.5 Vision Instruct": {
+        "microsoft": {
+            "input_price": "0.0001",
+            "output_price": "0.0005"
+        }
+    }
+}

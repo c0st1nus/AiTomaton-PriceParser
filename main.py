@@ -2,13 +2,24 @@
 import asyncio
 import logic
 from datetime import datetime
-from flask import Flask, send_from_directory, abort
+from flask import Flask, send_file, abort, send_from_directory
 from threading import Thread
 import os
 import handler
 from flask_cors import CORS, cross_origin
+from table import generate_table
 
 app = Flask(__name__)
+
+@app.route('/get_table/<string:date>')
+@cross_origin()
+def get_table(date):
+    try:
+        output = generate_table(date)
+        return send_file(output, as_attachment=True, download_name=f"selected_rows_{date.replace(':', '-')}.xlsx", mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    except Exception as e:
+        print(f"Error generating table: {e}")
+        abort(500, description="Error generating table")
 
 @app.route('/date/<string:date>')
 @cross_origin()

@@ -44,6 +44,7 @@ def remove_columns_from_tables(columns):
     conn.close()
 
 if __name__ == "__main__":
+    # Example usage: python new_lines.py add -c MMLU:VARCHAR(255) LLMArena:VARCHAR(255)
     parser = argparse.ArgumentParser(description="Add or remove columns from MySQL tables.")
     parser.add_argument("-c", required=True, nargs='+', help="List of columns to add or remove in the format 'column_name:column_type'")
     parser.add_argument("action", choices=["add", "rm"], help="Action to perform: 'add' to add columns, 'rm' to remove columns")
