@@ -57,7 +57,7 @@ def create_data_queries(data, average_prices):
             try:
                 query += f"'{value2['input_price']}/{value2['output_price']}', "
             except:
-                query += f"'{value2["value"]}', "
+                query += f"'{value2['value']}', "
         query = query.rstrip(", ")
         query += ")"
         queries.append(query)
