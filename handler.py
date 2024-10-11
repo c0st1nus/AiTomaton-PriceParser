@@ -1,5 +1,7 @@
 import re
 import pymysql
+import threading
+import queue
 from datetime import datetime
 
 operators = [
@@ -96,6 +98,29 @@ def save_data(data, average_prices):
     cursor.close()
     connection.close()
 
+def db_query(query, result_queue, table_name):
+    try:
+        connection = pymysql.connect(
+            host='145.249.249.29',
+            user='remoteuser',
+            password='new_strong_password',
+            database='parser',
+            port=3306,
+            cursorclass=pymysql.cursors.DictCursor
+        )
+        cursor = connection.cursor()
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        for row in rows:
+            for key, value in row.items():
+                if isinstance(value, datetime):
+                    row[key] = value.strftime('%Y-%m-%d %H:%M:%S')
+        result_queue.put((table_name, rows))
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        result_queue.put((table_name, {"error": str(e)}))
+
 def select_data(data):
     try:
         connection = pymysql.connect(
@@ -109,10 +134,16 @@ def select_data(data):
         cursor = connection.cursor()
         cursor.execute("SHOW TABLES")
         tables = cursor.fetchall()
+        cursor.close()
+        connection.close()
+
         date = datetime.strptime(data, '%Y-%m-%d')
         date_start = date.strftime('%Y-%m-%d 00:00:00')
         date_end = date.strftime('%Y-%m-%d 23:59:59')
-        result = {}
+
+        result_queue = queue.Queue()
+        threads = []
+
         for table in tables:
             table_name = table['Tables_in_parser']
             if table_name == 'average_prices':
@@ -123,16 +154,67 @@ def select_data(data):
                 ORDER BY date DESC
                 LIMIT 1
             """
-            cursor.execute(query)
-            rows = cursor.fetchall()
-            for row in rows:
-                for key, value in row.items():
-                    if isinstance(value, datetime):
-                        row[key] = value.strftime('%Y-%m-%d %H:%M:%S')
+            thread = threading.Thread(target=db_query, args=(query, result_queue, table_name))
+            threads.append(thread)
+            thread.start()
+
+        for thread in threads:
+            thread.join()
+
+        result = {}
+        while not result_queue.empty():
+            table_name, rows = result_queue.get()
             result[table_name] = rows
-        
+
+    except Exception as e:
+        result = {"error": str(e)}
+    return result
+
+def bench(data):
+    try:
+        connection = pymysql.connect(
+            host='145.249.249.29',
+            user='remoteuser',
+            password='new_strong_password',
+            database='parser',
+            port=3306,
+            cursorclass=pymysql.cursors.DictCursor
+        )
+        cursor = connection.cursor()
+        cursor.execute("SHOW TABLES")
+        tables = cursor.fetchall()
         cursor.close()
         connection.close()
+
+        date = datetime.strptime(data, '%Y-%m-%d')
+        date_start = date.strftime('%Y-%m-%d 00:00:00')
+        date_end = date.strftime('%Y-%m-%d 23:59:59')
+
+        result_queue = queue.Queue()
+        threads = []
+
+        for table in tables:
+            table_name = table['Tables_in_parser']
+            if table_name == 'average_prices':
+                continue
+            query = f"""
+                SELECT MMLU, LLMarena FROM {table_name}
+                WHERE date >= '{date_start}' AND date <= '{date_end}'
+                ORDER BY date DESC
+                LIMIT 1
+            """
+            thread = threading.Thread(target=db_query, args=(query, result_queue, table_name))
+            threads.append(thread)
+            thread.start()
+
+        for thread in threads:
+            thread.join()
+
+        result = {}
+        while not result_queue.empty():
+            table_name, rows = result_queue.get()
+            result[table_name] = rows
+
     except Exception as e:
         result = {"error": str(e)}
     return result

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import asyncio
 import logic
 from datetime import datetime
@@ -8,6 +7,8 @@ import os
 import handler
 from flask_cors import CORS, cross_origin
 from table import generate_table
+
+# -*- coding: utf-8 -*-
 
 app = Flask(__name__)
 
@@ -25,6 +26,11 @@ def get_table(date):
 @cross_origin()
 def show_date(date):    
     return handler.select_data(date)
+
+@app.route('/bench/<string:date>')
+@cross_origin()
+def show_bench(date):    
+    return handler.bench(date)
 
 @app.route('/log')
 def show_log():
