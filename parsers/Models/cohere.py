@@ -6,7 +6,7 @@ def cohere(url="https://cohere.com/pricing"):
     start_time = time.time()
     response = requests.get(url)
     html_content = response.content
-
+    
     soup = BeautifulSoup(html_content, 'html.parser')
 
     models = soup.select('div[data-component="ModelCard"]')

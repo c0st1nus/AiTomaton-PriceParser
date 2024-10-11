@@ -108,3 +108,12 @@
 10.10.2024 23:15 [Info] Service openAI completed in 9.43779 seconds
 10.10.2024 23:15 [Info] Service microsoft completed in 9.64745 seconds
 10.10.2024 23:15 [Info] Service groq completed in 9.92656 seconds
+11.10.2024 16:56 [Info] Service mistral completed in 0.49263 seconds
+11.10.2024 16:56 [Info] Service google completed in 0.73446 seconds
+11.10.2024 16:56 [Info] Service fireworks completed in 0.80752 seconds
+11.10.2024 16:56 [Info] Service cloudflare completed in 0.89302 seconds
+11.10.2024 16:56 [Info] Service openrouter completed in 0.90502 seconds
+11.10.2024 16:56 [Info] Service cohere completed in 1.09298 seconds
+11.10.2024 16:56 [Info] Service MMLU completed in 1.88335 seconds
+11.10.2024 16:56 [Info] Service replicate completed in 1.90110 seconds
+11.10.2024 16:56 [Info] Service novita completed in 1.90966 seconds
