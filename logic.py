@@ -6,8 +6,6 @@ import handler
 
 def get_data():
     consolidated_data = consolidate_data(parsers.parse())
-    with open("data.json", "w") as f:
-        json.dump(consolidated_data, f, indent=4)
     handler.save_data(consolidated_data, calculate_average_prices(consolidated_data))
 
 def log_success(service):

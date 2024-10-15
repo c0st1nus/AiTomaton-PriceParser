@@ -21,7 +21,7 @@ def openAI(url="https://openai.com/api/pricing/"):
     driver = webdriver.Firefox(service=service, options=options)
     
     driver.get(url)
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(1)
 
     html_content = driver.page_source
     driver.quit()

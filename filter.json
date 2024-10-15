@@ -1,5 +1,9 @@
 {
     "SKIP": [ 
+        "xAI__Grok_2_mini",
+        "xAI__Grok_2",
+        "Inflection__Inflection_3_Productivity",
+        "Inflection__Inflection_3_Pi",
         "GPT_NeoX_20B__5_shot_",
         "GPT_2_XL_1_5B__fine_tuned_",
         "RWKV_v5_Eagle_7B",
@@ -508,6 +512,11 @@
         "DeepSeek_V2_Chat",
         "DeepSeek_V2_5"
     ],
+    "DeepSeek 2.5": [
+        "DeepSeek_V2_5",
+        "Deepseek_v2_5"
+    ],
+
     "DBRX 132B Instruct": [
         "DBRX_Instruct_132B__5_shot_",
         "DBRX",
@@ -574,6 +583,7 @@
         "EVA_Qwen2_5_14B"
     ],
     "Qwen 2.5 72B instruct": [
+        "qwen_2_5_72b_instruct",
         "Qwen2_5_72b_Instruct",
         "Qwen2_5_72B_Instruct"
     ],
@@ -702,9 +712,11 @@
         "Llama_3_Lumimaid_70B"
     ],
     "Llama 3 Groq 8B 8K": [
+        "Llama_3_Groq_8B_Tool_Use_Preview_8k",
         "Llama_3_Groq_8B_Tool_Use_Preview_8K"
     ],
     "Llama 3 Groq 70B 8K": [
+        "Llama_3_Groq_70B_Tool_Use_Preview_8k",
         "Llama_3_Groq_70B_Tool_Use_Preview_8K"
     ],
     "Llama 3 Euryale 70B v2.1": [
@@ -754,10 +766,12 @@
         "Llama_3_1_70B_Versatile_128k"
     ],
     "Meta Llama 3.2 1B Instruct": [
+        "Llama_3_2_1B__Preview__8k",
         "Meta__Llama_3_2_1B_Instruct",
         "Meta_Llama_3_2_1b_Instruct"
     ],
     "Meta Llama 3.2 3B Instruct": [
+        "Llama_3_2_3B__Preview__8k",
         "Meta_Llama_3_2_3b_Instruct",
         "Meta__Llama_3_2_3B_Instruct"
     ],
@@ -771,6 +785,7 @@
         "Meta__LlamaGuard_2_8B"
     ],
     "LlamaGuard 3 8B 8K": [
+        "Llama_Guard_3_8B_8k",
         "Llama_Guard_3_8B_8K"
     ],
     "OpenHeremes 2 5 Mistral 7B": [
