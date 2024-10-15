@@ -9,7 +9,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import UnexpectedAlertPresentException
+from selenium.common.exceptions import UnexpectedAlertPresentException, NoAlertPresentException
 
 def load_config():
     with open("config.json", "r") as config_file:
@@ -28,8 +28,11 @@ def fetch_element_content(driver, element_xpath):
     try:
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, element_xpath)))
     except UnexpectedAlertPresentException:
-        alert = driver.switch_to.alert
-        alert.dismiss()
+        try:
+            alert = driver.switch_to.alert
+            alert.dismiss()
+        except NoAlertPresentException:
+            pass
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, element_xpath)))
     element = driver.find_element(By.XPATH, element_xpath)
     return element.get_attribute('outerHTML')
