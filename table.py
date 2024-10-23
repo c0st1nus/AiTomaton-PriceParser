@@ -6,9 +6,9 @@ from io import BytesIO
 
 def generate_table(date):
     db_config = {
-        'host': '145.249.249.29',
-        'user': 'remoteuser',
-        'password': 'new_strong_password',
+        'host': '127.0.0.1',
+        'user': 'root',
+        'password': 'root',
         'database': 'parser'
     }
 

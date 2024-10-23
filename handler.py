@@ -23,9 +23,9 @@ operators = [
 ]
 
 connection = pymysql.connect(
-    host='145.249.249.29',
-    user='remoteuser',
-    password='new_strong_password',
+    host='127.0.0.1',
+    user='root',
+    password='root',
     database='parser',
     port=3306,
     cursorclass=pymysql.cursors.DictCursor
@@ -80,9 +80,9 @@ def create_tables_query(data):
 
 def save_data(data, average_prices):
     connection = pymysql.connect(
-        host='145.249.249.29',
-        user='remoteuser',
-        password='new_strong_password',
+        host='127.0.0.1',
+        user='root',
+        password='root',
         database='parser',
         port=3306,
         cursorclass=pymysql.cursors.DictCursor
@@ -101,9 +101,9 @@ def save_data(data, average_prices):
 def db_query(query, result_queue, table_name):
     try:
         connection = pymysql.connect(
-            host='145.249.249.29',
-            user='remoteuser',
-            password='new_strong_password',
+            host='127.0.0.1',
+            user='root',
+            password='root',
             database='parser',
             port=3306,
             cursorclass=pymysql.cursors.DictCursor
@@ -124,9 +124,9 @@ def db_query(query, result_queue, table_name):
 def select_data(data):
     try:
         connection = pymysql.connect(
-            host='145.249.249.29',
-            user='remoteuser',
-            password='new_strong_password',
+            host='127.0.0.1',
+            user='root',
+            password='root',
             database='parser',
             port=3306,
             cursorclass=pymysql.cursors.DictCursor
@@ -173,9 +173,9 @@ def select_data(data):
 def bench(data):
     try:
         connection = pymysql.connect(
-            host='145.249.249.29',
-            user='remoteuser',
-            password='new_strong_password',
+            host='127.0.0.1',
+            user='root',
+            password='root',
             database='parser',
             port=3306,
             cursorclass=pymysql.cursors.DictCursor
@@ -222,9 +222,9 @@ def bench(data):
 def select_avg():
     try:
         connection = pymysql.connect(
-            host='145.249.249.29',
-            user='remoteuser',
-            password='new_strong_password',
+            host='127.0.0.1',
+            user='root',
+            password='root',
             database='parser',
             port=3306,
             cursorclass=pymysql.cursors.DictCursor

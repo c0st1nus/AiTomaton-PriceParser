@@ -1,5 +1,11 @@
 {
-    "SKIP": [ 
+    "SKIP": [
+        "Lumimaid_v0_2_70B",
+        "Magnum_v4_72B",
+        "xAI__Grok_Beta", 
+        "Yi_Lightning",
+        "GLM_4_Plus",
+        "Yi_Lightning_lite",
         "xAI__Grok_2_mini",
         "xAI__Grok_2",
         "Inflection__Inflection_3_Productivity",
@@ -276,6 +282,12 @@
     "Granite 8B instruct 8k": [
         "ibm_granite_granite_8b_code_instruct_8k"
     ],
+    "Granite 3.0 2B instruct": [
+        "ibm_granite_granite_3_0_2b_instruct"
+    ],
+    "Granite 3.0 8B instruct": [
+        "ibm_granite_granite_3_0_8b_instruct"
+    ],
     "AI21 Jamba 1.5 Large": [
         "Jamba_1_5_Large",
         "AI21__Jamba_1_5_Large"
@@ -338,11 +350,20 @@
     "Claude instant": [
         "Claude_Instant"
     ],
-    "Claude 3.5 sonnet": [
+    "Claude 3.5 Sonnet New": [
+        "Anthropic__Claude_3_5_Sonnet__2024_06_20_", 
+        "Anthropic__Claude_3_5_Sonnet__2024_06_20___self_moderated_"
+    ],
+
+    "Claude 3.5 Sonnet": [
         "Claude_3_5_Sonnet__5_shot_",
         "Claude_3_5_Sonnet",
         "Anthropic__Claude_3_5_Sonnet"
     ],
+    "Claude 3.5 Haiku": [
+        "Claude_3_5_Haiku"
+    ],
+
     "Claude 3 sonnet": [
         "Claude_3_Sonnet__5_shot__CoT_",
         "Claude_3_Sonnet",
@@ -579,6 +600,9 @@
     "ReMM SLERP 13B extended": [
         "ReMM_SLERP_13B__extended_"
     ], 
+    "Qwen 2.5 7B instruct": [
+        "Qwen2_5_7B_Instruct"
+    ],
     "EVA Qwen 2.5 14B": [
         "EVA_Qwen2_5_14B"
     ],
@@ -610,6 +634,10 @@
         "Qwen1_5_110B_Chat",
         "Qwen_1_5_110B_Chat"
     ],
+    "Qwen Max": [
+        "Qwen_Max_0919"
+    ],
+
     "Methalion 13B": [
         "Pygmalion__Mythalion_13B"
     ],
@@ -736,10 +764,20 @@
         "Meta__Llama_3_1_70B_Instruct",
         "llama_3_1_70b_instruct"
     ],
+    "Llama 3.1 70B nitro":[
+        "Meta__Llama_3_1_70B_Instruct__nitro_"
+    ],
+    "Nvidia Llama 3.1 Nemotron 70B instruct": [
+        "NVIDIA__Llama_3_1_Nemotron_70B_Instruct"
+    ],
     "Llama 3.1 405B base": [
         "Meta__Llama_3_1_405B__base_",
         "Meta_Llama_3_1_405B"
     ],
+    "Llama 3.1 405B nitro": [
+        "Meta__Llama_3_1_405B_Instruct__nitro_"
+    ],
+
     "Llama 3.1 405B instruct": [
         "Meta_Llama_3_1_405b_Instruct_fp8",
         "meta_meta_llama_3_1_405b_instruct",
@@ -939,5 +977,15 @@
     
     "Magnum V2 72B": [
         "Magnum_v2_72B"
+    ],
+    
+    "Ministral 3B": [
+        "Ministral_3B_24_10",
+        "Ministral_3B"
+    ],
+
+    "Ministral 8B": [
+        "Ministral_8B_24_10",
+        "Ministral_8B"
     ]
 }

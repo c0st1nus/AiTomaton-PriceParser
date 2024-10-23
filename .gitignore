@@ -21,3 +21,4 @@ __pycache__/
 dist/
 build/
 result.json
+config.json
