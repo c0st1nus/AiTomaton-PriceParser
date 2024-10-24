@@ -23,7 +23,7 @@ operators = [
 ]
 
 connection = pymysql.connect(
-    host='127.0.0.1',
+    host='db',
     user='root',
     password='root',
     database='parser',
@@ -80,7 +80,7 @@ def create_tables_query(data):
 
 def save_data(data, average_prices):
     connection = pymysql.connect(
-        host='127.0.0.1',
+        host='db',
         user='root',
         password='root',
         database='parser',
@@ -101,7 +101,7 @@ def save_data(data, average_prices):
 def db_query(query, result_queue, table_name):
     try:
         connection = pymysql.connect(
-            host='127.0.0.1',
+            host='db',
             user='root',
             password='root',
             database='parser',
@@ -124,7 +124,7 @@ def db_query(query, result_queue, table_name):
 def select_data(data):
     try:
         connection = pymysql.connect(
-            host='127.0.0.1',
+            host='db',
             user='root',
             password='root',
             database='parser',
@@ -160,7 +160,6 @@ def select_data(data):
 
         for thread in threads:
             thread.join()
-
         result = {}
         while not result_queue.empty():
             table_name, rows = result_queue.get()
@@ -173,7 +172,7 @@ def select_data(data):
 def bench(data):
     try:
         connection = pymysql.connect(
-            host='127.0.0.1',
+            host='db',
             user='root',
             password='root',
             database='parser',
@@ -222,7 +221,7 @@ def bench(data):
 def select_avg():
     try:
         connection = pymysql.connect(
-            host='127.0.0.1',
+            host='db',
             user='root',
             password='root',
             database='parser',
