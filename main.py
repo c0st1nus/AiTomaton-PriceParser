@@ -1,4 +1,6 @@
 import asyncio
+
+import schedule
 import logic
 from datetime import datetime
 from flask import Flask, send_file, abort, send_from_directory
@@ -7,6 +9,7 @@ import os
 import handler
 from flask_cors import CORS, cross_origin
 from table import generate_table
+from dumpHandler import create_dump
 
 # -*- coding: utf-8 -*-
 
@@ -41,6 +44,13 @@ def show_log():
 def show_avg():
     return handler.select_avg()
 
+def create_daily_backup():
+    today_date = datetime.now().strftime("%Y-%m-%d")
+    backup_file_path = f"/sql_dump/{today_date}.sql"
+    create_dump(backup_file_path)
+
+schedule.every().day.at("00:00").do(create_daily_backup)
+
 async def call_function():
     while True:
         logic.get_data()
@@ -49,6 +59,7 @@ async def call_function():
         await asyncio.sleep(14400)
         now = datetime.now()
         print('After:', now)
+        schedule.run_pending()
 
 def start_loop(loop):
     asyncio.set_event_loop(loop)
