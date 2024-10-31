@@ -150,7 +150,6 @@ def select_data(data):
                 continue
             query = f"""
                 SELECT * FROM {table_name}
-                WHERE date >= '{date_start}' AND date <= '{date_end}'
                 ORDER BY date DESC
                 LIMIT 1
             """
@@ -197,8 +196,7 @@ def bench(data):
             if table_name == 'average_prices':
                 continue
             query = f"""
-                SELECT MMLU, LLMarena FROM {table_name}
-                WHERE date >= '{date_start}' AND date <= '{date_end}'
+                SELECT * FROM {table_name}
                 ORDER BY date DESC
                 LIMIT 1
             """
