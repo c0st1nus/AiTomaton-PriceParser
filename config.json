@@ -1,0 +1,4 @@
+{
+    "driver": "/usr/local/bin/geckodriver",
+    "browser": "/usr/bin/firefox"
+}

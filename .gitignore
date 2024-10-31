@@ -21,7 +21,5 @@ __pycache__/
 dist/
 build/
 result.json
-config.json
 /docker-compose.yaml
 /log.txt
-/config.json
