@@ -1,4 +1,6 @@
 {
     "driver": "/usr/local/bin/geckodriver",
-    "browser": "/usr/bin/firefox"
+    "browser": "/usr/bin/firefox",
+    "database_url": "db",
+    "database_port": 3006
 }
