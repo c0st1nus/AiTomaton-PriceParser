@@ -26,11 +26,10 @@ operators = [
 ]
 
 connection = pymysql.connect(
-    host = config["database_url"],
+    host = config["database_socket"],
     user='root',
     password='root',
     database='parser',
-    port = config["database_port"],
     cursorclass=pymysql.cursors.DictCursor
 )
 
@@ -83,11 +82,10 @@ def create_tables_query(data):
 
 def save_data(data, average_prices):
     connection = pymysql.connect(
-        host = config["database_url"],
+        host = config["database_socket"],
         user='root',
         password='root',
         database='parser',
-        port = config["database_port"],
         cursorclass=pymysql.cursors.DictCursor
     )
     cursor = connection.cursor()
@@ -104,11 +102,10 @@ def save_data(data, average_prices):
 def db_query(query, result_queue, table_name):
     try:
         connection = pymysql.connect(
-            host = config["database_url"],
+            host = config["database_socket"],
             user='root',
             password='root',
             database='parser',
-            port = config["database_port"],
             cursorclass=pymysql.cursors.DictCursor
         )
         cursor = connection.cursor()
@@ -127,11 +124,10 @@ def db_query(query, result_queue, table_name):
 def select_data(data):
     try:
         connection = pymysql.connect(
-            host = config["database_url"],
+            host = config["database_socket"],
             user='root',
             password='root',
             database='parser',
-            port = config["database_port"],
             cursorclass=pymysql.cursors.DictCursor
         )
         cursor = connection.cursor()
@@ -174,11 +170,10 @@ def select_data(data):
 def bench(data):
     try:
         connection = pymysql.connect(
-            host = config["database_url"],
+            host = config["database_socket"],
             user='root',
             password='root',
             database='parser',
-            port = config["database_port"],
             cursorclass=pymysql.cursors.DictCursor
         )
         cursor = connection.cursor()
@@ -222,11 +217,10 @@ def bench(data):
 def select_avg():
     try:
         connection = pymysql.connect(
-            host = config["database_url"],
+            host = config["database_socket"],
             user='root',
             password='root',
             database='parser',
-            port = config["database_port"],
             cursorclass=pymysql.cursors.DictCursor
         )
         cursor = connection.cursor()
