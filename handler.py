@@ -26,7 +26,7 @@ operators = [
 ]
 
 connection = pymysql.connect(
-    host = config["database_socket"],
+    unix_socket = config["database_socket"],
     user='root',
     password='root',
     database='parser',
@@ -82,7 +82,7 @@ def create_tables_query(data):
 
 def save_data(data, average_prices):
     connection = pymysql.connect(
-        host = config["database_socket"],
+        unix_socket = config["database_socket"],
         user='root',
         password='root',
         database='parser',
@@ -102,7 +102,7 @@ def save_data(data, average_prices):
 def db_query(query, result_queue, table_name):
     try:
         connection = pymysql.connect(
-            host = config["database_socket"],
+            unix_socket = config["database_socket"],
             user='root',
             password='root',
             database='parser',
@@ -124,7 +124,7 @@ def db_query(query, result_queue, table_name):
 def select_data(data):
     try:
         connection = pymysql.connect(
-            host = config["database_socket"],
+            unix_socket = config["database_socket"],
             user='root',
             password='root',
             database='parser',
@@ -170,7 +170,7 @@ def select_data(data):
 def bench(data):
     try:
         connection = pymysql.connect(
-            host = config["database_socket"],
+            unix_socket = config["database_socket"],
             user='root',
             password='root',
             database='parser',
@@ -217,10 +217,11 @@ def bench(data):
 def select_avg():
     try:
         connection = pymysql.connect(
-            host = config["database_socket"],
+            unix_socket = config["database_socket"],
             user='root',
             password='root',
             database='parser',
+
             cursorclass=pymysql.cursors.DictCursor
         )
         cursor = connection.cursor()

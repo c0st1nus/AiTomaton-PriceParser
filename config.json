@@ -1,7 +1,5 @@
 {
     "driver": "/usr/local/bin/geckodriver",
     "browser": "/usr/bin/firefox",
-    "database_url": "host.docker.internal",
     "database_socket": "/var/run/mysqld/mysqld.sock"
-
 }
