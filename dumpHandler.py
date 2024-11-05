@@ -16,7 +16,7 @@ def create_dump(filename):
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
     try:
-        ssh.connect(hostname, username=username, password=password)
+        ssh.connect(hostname=hostname, username=username, password=password)
         
         dump_command = f"mysqldump -u aitomaton -ptrdYTvtrC756c parser > {save_path}/{filename}"
         stdin, stdout, stderr = ssh.exec_command(dump_command)
