@@ -18,7 +18,7 @@ def create_dump(filename):
     try:
         ssh.connect(hostname=hostname, username=username, password=password)
         
-        dump_command = f"mysqldump -u aitomaton -ptrdYTvtrC756c parser > {save_path}/{filename}"
+        dump_command = f"mysqldump -u aitomaton -ptrdYTvtrC756c parser > {save_path}/{filename}.sql"
         stdin, stdout, stderr = ssh.exec_command(dump_command)
         exit_status = stdout.channel.recv_exit_status()
 
