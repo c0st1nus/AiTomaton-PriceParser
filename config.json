@@ -1,6 +1,6 @@
 {
     "driver": "/usr/local/bin/geckodriver",
     "browser": "/usr/bin/firefox",
-    "database_url": "10.80.241.1",
+    "database_url": "host.docker.internal",
     "database_port": 3306
 }
