@@ -1,5 +1,5 @@
 import asyncio
-
+import dumpHandler
 import schedule
 import logic
 from datetime import datetime
@@ -44,12 +44,12 @@ def show_log():
 def show_avg():
     return handler.select_avg()
 
-def create_daily_backup():
-    today_date = datetime.now().strftime("%Y-%m-%d")
-    backup_file_path = f"/sql_dump/{today_date}.sql"
-    create_dump(backup_file_path)
+async def daily_backup():
+    while True:
+        dumpHandler.create_dump(datetime.now().strftime("%Y-%m-%d"))
+        print(f"Backup created: {datetime.now()}")
+        await asyncio.sleep(86400) 
 
-schedule.every().day.at("00:00").do(create_daily_backup)
 
 async def call_function():
     while True:
@@ -59,7 +59,6 @@ async def call_function():
         await asyncio.sleep(14400)
         now = datetime.now()
         print('After:', now)
-        schedule.run_pending()
 
 def start_loop(loop):
     asyncio.set_event_loop(loop)
@@ -69,6 +68,8 @@ if __name__ == '__main__':
     new_loop = asyncio.new_event_loop()
     t = Thread(target=start_loop, args=(new_loop,))
     t.start()
-
+    
     new_loop.call_soon_threadsafe(new_loop.create_task, call_function())
+    new_loop.call_soon_threadsafe(new_loop.create_task, daily_backup())
+    
     app.run(host="0.0.0.0", port=3006)

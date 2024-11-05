@@ -3,10 +3,12 @@ import json
 import os
 
 
-def create_dump(backup_file_path):
+def create_dump(filename):
     hostname = os.getenv("SSH_HOSTNAME")
     username = os.getenv("SSH_USERNAME")
     password = os.getenv("SSH_PASSWORD")
+    save_path = os.getenv("SAVE_PATH")
+
     container_name = 'mysqlparser'
     local_backup_dir = '/sql_dump'
 
@@ -16,24 +18,16 @@ def create_dump(backup_file_path):
     try:
         ssh.connect(hostname, username=username, password=password)
         
-        dump_command = f"docker exec {container_name} sh -c 'mysqldump -u root -proot parser > {backup_file_path}'"
+        dump_command = f"mysqldump -u aitomaton -ptrdYTvtrC756c parser > {save_path}/{filename}"
         stdin, stdout, stderr = ssh.exec_command(dump_command)
         exit_status = stdout.channel.recv_exit_status()
 
         if exit_status == 0:
-            print("Backup created inside the container.")
+            print("Backup created")
         else:
             print(f"Error during backup: {stderr.read().decode()}")
-
-        copy_command = f"echo \"{password}\" | sudo -S docker cp {container_name}:{backup_file_path} {local_backup_dir}"
-        
-        stdin, stdout, stderr = ssh.exec_command(copy_command)
-        exit_status = stdout.channel.recv_exit_status()
-
-        if exit_status == 0:
-            print(f"Backup copied to {local_backup_dir}.")
-        else:
-            print(f"Error during file copy: {stderr.read().decode()}")
         
     finally:
         ssh.close()
+
+create_dump()
