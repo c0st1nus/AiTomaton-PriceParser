@@ -29,5 +29,3 @@ def create_dump(filename):
         
     finally:
         ssh.close()
-
-create_dump()
