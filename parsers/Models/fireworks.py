@@ -6,11 +6,11 @@ def fireworks(url="https://fireworks.ai/pricing"):
     start_time = time.time()
     response = requests.get(url)
     response.raise_for_status()
-    
     soup = BeautifulSoup(response.content, 'html.parser')
     
-    table = soup.select_one('body > main > div > div:nth-of-type(2) > table')
-    
+    tbody = soup.select_one('div.rounded:nth-child(6) > table:nth-child(1) > tbody:nth-child(2)')
+    with open("fireworks.html", "w", encoding="utf-8") as file:
+        file.write(str(tbody))
     data = {
         "Any model 0-4B": {"input_price": None, "output_price": None},
         "Any model 4-16B": {"input_price": None, "output_price": None},
@@ -21,10 +21,10 @@ def fireworks(url="https://fireworks.ai/pricing"):
         "Meta Llama 3.1 405B": {"input_price": None, "output_price": None}
     }
     
-    for row in table.find_all('tr'):
+    for row in tbody.find_all('tr'):
         columns = row.find_all('td')
         if len(columns) < 2:
-            continue  # Пропускаем строки, в которых меньше двух столбцов
+            continue
         model = columns[0].text.strip()
         price = columns[1].text.strip().replace('$', '')
         
