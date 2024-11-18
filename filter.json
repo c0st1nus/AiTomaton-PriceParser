@@ -1,5 +1,22 @@
 {
     "SKIP": [
+        "Google__Gemini_Experimental_1114",
+        "Qwen2_5_Coder_32B_Instruct",
+        "SorcererLM_8x22B",
+        "Unslopnemo_12b",
+        "Anthropic__Claude_3_5_Haiku__2024_10_22___self_moderated_",
+        "Anthropic__Claude_3_5_Haiku__self_moderated_",
+        "Meta__Llama_3_2_90B_Vision_Instruct__free_",
+        "Pixtral_Large",
+        "starcannon_v2",
+        "Gemini_Exp_1114",
+        "Meta_Llama_3_1_405B_Instruct_fp8",
+        "Meta_Llama_3_1_405B_Instruct_bf16",
+        "Athene_70B",
+        "Gemma_2_9B_it_SimPO",
+        "Gemini_1_5_Flash_8B_Exp_0827",
+        "Hunyuan_Standard_256K",
+        "InternLM2_5_20B_chat",
         "Lumimaid_v0_2_70B",
         "Magnum_v4_72B",
         "xAI__Grok_Beta", 
@@ -67,7 +84,6 @@
         "GPT_3_175B__5_shot_",
         "GPT_3_175B__fine_tuned_",
         "GPT_3_6_7B__fine_tuned_",
-        "Gemma_2B",
         "phi_1_5_web_1_3B",
         "GPT_3_175B__0_shot_",
         "GPT_3_13B__5_shot_",
@@ -147,14 +163,10 @@
         "Starling_LM_7B_alpha",
         "Gemma_1_1_7b_it",
         "NV_Llama2_70B_SteerLM_Chat",
-        "pplx_70b_online",
         "Qwen1_5_7B_Chat",
         "SOLAR_10_7B_Instruct_v1_0",
-        "Zephyr_7b_beta",
         "MPT_30B_chat",
         "CodeLlama_70B_instruct",
-        "Zephyr_7b_alpha",
-        "pplx_7b_online",
         "falcon_180b_chat",
         "CodeLlama_34B_instruct",
         "Vicuna_13B",
@@ -351,16 +363,21 @@
         "Claude_Instant"
     ],
     "Claude 3.5 Sonnet New": [
+        "Claude_3_5_Sonnet__20241022_",
         "Anthropic__Claude_3_5_Sonnet__2024_06_20_", 
         "Anthropic__Claude_3_5_Sonnet__2024_06_20___self_moderated_"
     ],
 
     "Claude 3.5 Sonnet": [
+        "Claude_3_5_Sonnet__20240620_",
         "Claude_3_5_Sonnet__5_shot_",
         "Claude_3_5_Sonnet",
         "Anthropic__Claude_3_5_Sonnet"
     ],
+
     "Claude 3.5 Haiku": [
+        "Anthropic__Claude_3_5_Haiku__2024_10_22_",
+        "Anthropic__Claude_3_5_Haiku",
         "Claude_3_5_Haiku"
     ],
 
@@ -450,7 +467,15 @@
         "GPT_3_5_Turbo_1106",
         "OpenAI__GPT_3_5_Turbo_16k__older_v1106_"
     ],
+    "Gemma 2B it": [
+        "Gemma_2B_it",
+        "Gemma_2B"
+    ],
+    "Gemmae 7B it": [
+        "Gemma_7B_it"
+    ],
     "Gemma 2 9B": [
+        "Gemma_2_9B_it",
         "Gemma_2_9b_it",
         "Google__Gemma_2_9B",
         "gemma_2_9b_it",
@@ -460,6 +485,7 @@
         "Gemma_2_9B_8k"
     ],
     "Gemma 2 27B": [
+        "Gemma_2_27B_it",
         "Gemma_2_27b_it",
         "Google__Gemma_2_27B"
     ],
@@ -489,6 +515,7 @@
         "Goliath_120B"
     ],
     "Gemma 7B 8K instruct": [
+        "Gemma_1_1_7B_it",
         "Gemma_7B_8k_Instruct",
         "Gemma_7b_it"
     ],
@@ -510,6 +537,7 @@
         "Fimbulvetr_11B_v2"
     ],
     "Dolphin Llama 3 70B": [
+        "Llama_3_70B_Instruct",
         "meta_meta_llama_3_70b",
         "Dolphin_Llama_3_70B__"
     ],
@@ -606,6 +634,10 @@
     "EVA Qwen 2.5 14B": [
         "EVA_Qwen2_5_14B"
     ],
+    "EVA Qwen 2.5 32B": [
+        "EVA_Qwen2_5_32B"
+    ],
+
     "Qwen 2.5 72B instruct": [
         "qwen_2_5_72b_instruct",
         "Qwen2_5_72b_Instruct",
@@ -649,6 +681,7 @@
         "Phi_3_small_128k_instruct"
     ],
     "Phi 3 Mini 4K Instruct": [
+        "Phi_3_Mini_4K_Instruct_June_24",
         "Phi_3_Mini_4k_Instruct_June_24",
         "Phi_3_Mini_4k_Instruct",
         "Phi_3_mini_4k_instruct"
@@ -677,8 +710,8 @@
         "Phi_3_5_Mini_128K_Instruct",
         "Phi_3_5_mini_instruct"
     ],
-    "Llama 2 7B": [    
-        "llama_2_7b_chat_fp16",
+    "Llama 2 7B": [   
+        "Llama_2_7B_chat", 
         "Llama_2_7b_chat",
         "llama_2_7b_chat_int8",
         "meta_llama_2_7b"
@@ -690,6 +723,7 @@
         "meta_llama_2_13b"
     ],
     "Llama 2 70B": [
+        "Llama_2_70B_chat",
         "Llama_2_70b_chat",
         "meta_llama_2_70b"
     ],
@@ -709,6 +743,7 @@
         "Meta__Llama_3_8B_Instruct__extended_"
     ],
     "Llama 3 8B instruct": [
+        "Llama_3_8B_Instruct",
         "Llama_3_8b_Instruct",
         "Meta__Llama_3_8B_Instruct",
         "llama_3_8b_instruct"
@@ -755,17 +790,27 @@
         "Llama_3_8B_Lunaris"
     ],
     "Llama 3.1 8B": [
+        "Meta_Llama_3_1_8B_Instruct",
         "Meta_Llama_3_1_8b_Instruct",
         "Meta__Llama_3_1_8B_Instruct",
         "llama_3_1_8b_instruct"
     ],
     "Llama 3.1 70B": [
+        "Meta_Llama_3_1_70B_Instruct",
         "Meta_Llama_3_1_70b_Instruct",
         "Meta__Llama_3_1_70B_Instruct",
         "llama_3_1_70b_instruct"
     ],
     "Llama 3.1 70B nitro":[
         "Meta__Llama_3_1_70B_Instruct__nitro_"
+    ],
+    
+    "Llama 3.1 Nemotron 51B instruct": [
+        "Llama_3_1_Nemotron_51B_Instruct"
+    ],
+
+    "Llama 3.1 Nemotron 70B instruct": [
+        "Llama_3_1_Nemotron_70B_Instruct"
     ],
     "Nvidia Llama 3.1 Nemotron 70B instruct": [
         "NVIDIA__Llama_3_1_Nemotron_70B_Instruct"
@@ -804,11 +849,13 @@
         "Llama_3_1_70B_Versatile_128k"
     ],
     "Meta Llama 3.2 1B Instruct": [
+        "Meta_Llama_3_2_1B_Instruct",
         "Llama_3_2_1B__Preview__8k",
         "Meta__Llama_3_2_1B_Instruct",
         "Meta_Llama_3_2_1b_Instruct"
     ],
     "Meta Llama 3.2 3B Instruct": [
+        "Meta_Llama_3_2_3B_Instruct",
         "Llama_3_2_3B__Preview__8k",
         "Meta_Llama_3_2_3b_Instruct",
         "Meta__Llama_3_2_3B_Instruct"
@@ -948,6 +995,7 @@
         "Mistral_Medium"
     ],
     "Mistral Large": [
+        "Mistral_Large_24_11",
         "Mistral_Large_2402",
         "Mistral_Large"
     ],
@@ -960,6 +1008,10 @@
     ],
     "Mistral Nemo 12B Starcannon": [
         "Mistral_Nemo_12B_Starcannon"
+    ],
+
+    "Mistral Nemo 12B Inferor": [
+        "Mistral_Nemo_Inferor_12B"
     ],
     "Mistral Nemo 12B Celeste": [
         "Mistral_Nemo_12B_Celeste"
@@ -985,7 +1037,28 @@
     ],
 
     "Ministral 8B": [
+        "Ministral_8B_2410",
         "Ministral_8B_24_10",
         "Ministral_8B"
+    ],
+    
+    "Zephyr 7B alpha": [
+        "Zephyr_7B_alpha",
+        "Zephyr_7b_alpha"
+    ],
+
+    "Zephyr 7B beta": [
+        "Zephyr_7B_beta",
+        "Zephyr_7b_beta"
+    ],
+    
+    "Perplexity 7B online": [
+        "pplx_7B_online",
+        "pplx_7b_online"
+    ],
+
+    "Perplexity 70B online": [
+        "pplx_70B_online",
+        "pplx_70b_online"
     ]
 }
