@@ -4,6 +4,10 @@ import threading
 import queue
 from datetime import datetime
 import json
+import os
+
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
 
 config = json.load(open('config.json'))
 
@@ -27,8 +31,8 @@ operators = [
 
 connection = pymysql.connect(
     unix_socket = config["database_socket"],
-    user='root',
-    password='root',
+    user=user,
+    password=password,
     database='parser',
     cursorclass=pymysql.cursors.DictCursor
 )
@@ -83,8 +87,8 @@ def create_tables_query(data):
 def save_data(data, average_prices):
     connection = pymysql.connect(
         unix_socket = config["database_socket"],
-        user='root',
-        password='root',
+        user=user,
+        password=password,
         database='parser',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -103,8 +107,8 @@ def db_query(query, result_queue, table_name):
     try:
         connection = pymysql.connect(
             unix_socket = config["database_socket"],
-            user='root',
-            password='root',
+            user=user,
+            password=password,
             database='parser',
             cursorclass=pymysql.cursors.DictCursor
         )
@@ -125,8 +129,8 @@ def select_data(data):
     try:
         connection = pymysql.connect(
             unix_socket = config["database_socket"],
-            user='root',
-            password='root',
+            user=user,
+            password=password,
             database='parser',
             cursorclass=pymysql.cursors.DictCursor
         )
@@ -171,8 +175,8 @@ def bench(data):
     try:
         connection = pymysql.connect(
             unix_socket = config["database_socket"],
-            user='root',
-            password='root',
+            user=user,
+            password=password,
             database='parser',
             cursorclass=pymysql.cursors.DictCursor
         )
@@ -218,10 +222,9 @@ def select_avg():
     try:
         connection = pymysql.connect(
             unix_socket = config["database_socket"],
-            user='root',
-            password='root',
+            user=user,
+            password=password,
             database='parser',
-
             cursorclass=pymysql.cursors.DictCursor
         )
         cursor = connection.cursor()

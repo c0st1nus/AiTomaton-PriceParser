@@ -34,7 +34,8 @@ def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
     driver.quit()
     soup = BeautifulSoup(html_content, 'html.parser')
     cards = soup.find_all('article', class_='PricingCard_pricingCard__I0GPp')
-
+    with open("antropic.html", "w") as file:
+        file.write(str(cards))
     data = {}
     price_pattern = re.compile(r'\$([\d.]+)')
 
@@ -43,23 +44,27 @@ def anthropic(url="https://www.anthropic.com/pricing#anthropic-api"):
         if title_element is None:
             continue
         model = title_element.text.strip()
-        if model in ['Free', 'Pro', 'Team']:
+        if model in ['Free', 'Pro', 'Team', 'Enterprise']:
             continue
         price_sections = card.find_all('div', class_='PricingCard_cost__m6Npy')
-        price_data = {"input_price": None, "output_price": None}  # Изменено
+        price_data = {"input_price": None, "output_price": None}
         for section in price_sections:
-            caption = section.find('div', class_='text-caption').text.strip()
-            if caption == 'Input':
-                price_text = section.find('div', class_='PricingCard_price___wnbq').text.strip()
-                match = price_pattern.search(price_text)
-                if match:
-                    price_data["input_price"] = match.group(1)  # Изменено
-            elif caption == 'Output':  # Изменено
-                price_text = section.find('div', class_='PricingCard_price___wnbq').text.strip()
-                match = price_pattern.search(price_text)
-                if match:
-                    price_data["output_price"] = match.group(1)  # Изменено
-        if price_data["input_price"] or price_data["output_price"]:  # Изменено
+            caption_element = section.find('div', class_='text-caption')
+            if caption_element:
+                caption = caption_element.text.strip()
+                if caption == 'Input':
+                    price_text = section.find('div', class_='PricingCard_price___wnbq').text.strip()
+                    match = price_pattern.search(price_text)
+                    if match:
+                        price_data["input_price"] = match.group(1)
+                elif caption == 'Output':
+                    price_text = section.find('div', class_='PricingCard_price___wnbq').text.strip()
+                    match = price_pattern.search(price_text)
+                    if match:
+                        price_data["output_price"] = match.group(1)
+            else:
+                print("Caption element not found")
+        if price_data["input_price"] or price_data["output_price"]:
             data[model] = price_data
 
     end_time = time.time()

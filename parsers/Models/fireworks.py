@@ -9,8 +9,6 @@ def fireworks(url="https://fireworks.ai/pricing"):
     soup = BeautifulSoup(response.content, 'html.parser')
     
     tbody = soup.select_one('div.rounded:nth-child(6) > table:nth-child(1) > tbody:nth-child(2)')
-    with open("fireworks.html", "w", encoding="utf-8") as file:
-        file.write(str(tbody))
     data = {
         "Any model 0-4B": {"input_price": None, "output_price": None},
         "Any model 4-16B": {"input_price": None, "output_price": None},
